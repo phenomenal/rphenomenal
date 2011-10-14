@@ -10,6 +10,7 @@ gem 'haml'
 gem 'will_paginate'
 gem 'sqlite3'
 gem 'phenomenal'
+gem 'fractals'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -8,7 +8,7 @@ module ApplicationHelper
     end
   end
   
-  def phenomenal_color(tmp)
+  def phenomenal_color
     "#fff"
   end
 end
