@@ -6,7 +6,10 @@ gem 'rails', '3.1.0'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-
+gem 'haml'
+gem 'will_paginate'
+gem 'sqlite3'
+gem 'phenomenal'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -14,6 +17,9 @@ group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
+  gem 'yui-compressor'
+  gem 'execjs'
+  gem "therubyracer", :require => 'v8'
 end
 
 gem 'jquery-rails'
@@ -26,4 +32,12 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+group :development do
+  gem 'rspec-rails'
+  gem 'annotate-models'
+end
 
+group :test do
+  gem 'rspec-rails'
+  gem 'webrat'
+end
