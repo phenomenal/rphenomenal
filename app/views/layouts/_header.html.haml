@@ -1,2 +1,3 @@
-#header{:style=>"background-color:#{phenomenal_color}"}
+#header{:style=>"background-color:#{phenomenal_color(params[:test])}"}
+  =phenomenal_color(params[:test])
   %h1 Phenomenal Gem

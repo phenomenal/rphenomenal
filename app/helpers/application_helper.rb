@@ -1,8 +1,4 @@
 module ApplicationHelper
-  def self.included(klass)
-    puts("%%%%%%%%%%% #{klass.ancestors} $")
-  end
-  
   def title
     base_title = "Phenomenal Gem"
     if @title
@@ -12,8 +8,7 @@ module ApplicationHelper
     end
   end
   
-  def phenomenal_color
-    logger.debug("@@@@@@@@@@@@@@@@ #{self.class.ancestors}")
+  def phenomenal_color(tmp)
     "#fff"
   end
 end
