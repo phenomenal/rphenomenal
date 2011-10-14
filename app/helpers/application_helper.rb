@@ -9,6 +9,7 @@ module ApplicationHelper
   end
   
   def phenomenal_color(tmp)
+    puts "--- CALLED"
     "#fff"
   end
 end

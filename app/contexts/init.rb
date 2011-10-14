@@ -4,6 +4,7 @@
 
 pnml_define_context(:hour)
 pnml_add_adaptation(:hour, ApplicationHelper, :phenomenal_color) do |tmp|
+  puts "COP CALLED"
   "red"
 end
 
