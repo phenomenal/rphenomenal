@@ -4,12 +4,7 @@ class ApplicationController < ActionController::Base
   
   private
   def activate_contexts
-#    logger.debug("DEAACT----------------")
-#    pnml_deactivate_context(:hour)
-#    pnml_deactivate_context(:date)
-#    pnml_deactivate_context(:user_agent)
-#    pnml_deactivate_context(:geo_ip)
-      logger.debug("***************************************")
+      pnml_deactivate_all_contexts if Rails.env == "development"
       pnml_activate_context(:hour)
   end
 end
