@@ -1,5 +1,10 @@
 - content_for :presenter do
-    =render "presenter"
+  =render "presenter"
 
 %h1=@title
-With a little of digging, we found the feature that was causing the problem. Annoyingly, the error never popped up when the feature was run alone, meaning it was the interaction of multiple features or steps. After whittling away the options, we found the right situation to force the error: a feature using capybara-webkit followed by one specific scenario in a different feature (which, oddly, didn’t use any Javascript at all). Being able to reliably reproduce the error is a big step towards finding a solution.
+%h2 Your context
+=display_browser
+
+%h2 Contexts
+- pnml_defined_contexts.each do |c|
+  =render "shared/context", :context=>c

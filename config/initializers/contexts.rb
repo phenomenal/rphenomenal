@@ -1,4 +1,2 @@
-#Initialize the contexts
-#TODO change this 
-require_relative '../../app/contexts/init.rb'
-
+#require_relative "../../app/contexts/init.rb"
+InitContext.define_contexts

@@ -1,0 +1,11 @@
+%strong
+  %u
+    = context.name.try("capitalize") || "Undefined"
+%p
+  -if  context.active?
+    %strong Active
+  -else
+    Inactive
+  %br
+  Adaptations 
+  =context.adaptations.size
