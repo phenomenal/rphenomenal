@@ -94,7 +94,7 @@ class InitContext
     
     pnml_define_context(:belgium) 
     pnml_add_adaptation(:belgium, ApplicationHelper, :display_location) do 
-      image_tag("http://maps.googleapis.com/maps/api/staticmap?center=Belgium&zoom=5&size=150x512&maptype=roadmap&sensor=false", "data-caption"=>"You are in Belgium")
+      image_tag("http://maps.googleapis.com/maps/api/staticmap?center=Belgium&zoom=6&size=500x150&maptype=roadmap&sensor=false", "data-caption"=>"You are in Belgium")
     end
     pnml_define_context(:unknown_country) 
     
