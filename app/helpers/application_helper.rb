@@ -9,8 +9,16 @@ module ApplicationHelper
   end
   
   def display_browser
-    puts "$$$$$$$$$$$$$$$$$$"
     image_tag "browser.jpg"
+  end
+  def display_os
+    "Unknown os"
+  end
+  def display_hour
+    "Unknown hour"
+  end
+  def display_location
+    image_tag("http://maps.googleapis.com/maps/api/staticmap?center=Belgium&zoom=0&size=500x150&maptype=roadmap&sensor=false", "data-caption"=>"You are in a foreign country")
   end
   
   def phenomenal_color(r, g, b)

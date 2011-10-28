@@ -11,6 +11,7 @@ gem 'will_paginate'
 gem 'sqlite3'
 gem 'phenomenal', :git => "git@git.phenomenal-gem.com:phenomenal.git"
 gem 'fractals'
+gem 'geoip'
 
 # Gems used only for assets and not required
 # in production environments by default.

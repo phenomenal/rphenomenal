@@ -14,17 +14,33 @@ class ApplicationController < ActionController::Base
       pnml_activate_context(:evening) 
     end
     
-    # User agent context
-    req_env = request.env["HTTP_USER_AGENT"]
-    puts req_env
-    if req_env[/(Firefox)/]
+    # Browser context
+    user_agent = request.user_agent
+    if user_agent[/(Firefox)/]
       pnml_activate_context(:firefox) 
-    elsif req_env[/(Chrome)/]
+    elsif user_agent[/(Chrome)/]
       pnml_activate_context(:chrome) 
-    elsif req_env[/(Safari)/]
+    elsif user_agent[/(Safari)/]
       pnml_activate_context(:safari)
-    elsif req_env[/(MSIE)/]
+    elsif user_agent[/(MSIE)/]
       pnml_activate_context(:internetexplorer) 
     end
+    # OS context
+    if user_agent[/(Linux)/]
+      pnml_activate_context(:linux) 
+    elsif user_agent[/(Windows)/]
+      pnml_activate_context(:windows) 
+    elsif user_agent[/(Mac)/]
+      pnml_activate_context(:mac)
+    end
+    
+    g = GeoIP.new("#{Rails.root}/app/assets/GeoIP.dat")
+    country = g.country request.remote_ip
+    if country =="Belgium"
+      pnml_activate_context(:belgium)
+    else
+      pnml_activate_context(:unknown_country)
+    end 
+    
   end
 end

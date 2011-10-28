@@ -2,9 +2,6 @@
   =render "presenter"
 
 %h1=@title
-%h2 Your context
-=display_browser
-
 %h2 Contexts
 - pnml_defined_contexts.each do |c|
   =render "shared/context", :context=>c

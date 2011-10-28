@@ -1,0 +1,33 @@
+body {
+  background:lightgrey;
+  font: 400 15px/24px "proxima-nova-1","proxima-nova-2","Helvetica Neue",Helvetica,sans-serif;
+}
+#header {
+  background:red;
+}
+#presenter {
+  width:948px;
+  height:150px;
+  border: 1px solid white;
+  overflow:hidden; 
+  
+}
+#presenter_mask{
+  width:10000000000000px;
+}
+.context_presenter{
+    width:950px;
+    height:150px;
+    float:left;
+  }
+.context_presenter img {
+      float:left;
+      margin-right:15px;
+      height:150px;
+    }
+.hidden {
+  display:none;
+}
+#footer {
+  background:yellow;
+}

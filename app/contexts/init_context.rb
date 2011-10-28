@@ -22,15 +22,27 @@ class InitContext
       pnml_proceed((r*k).to_i,(g*k).to_i,(b*k).to_i)
     end
     
+    pnml_add_adaptation(:morning, ApplicationHelper, :display_hour) do 
+      image_tag("morning.jpg", "data-caption"=>"We are in the morning")
+    end
+    
     pnml_define_context(:afternoon)
     pnml_add_adaptation(:afternoon, ApplicationHelper, :phenomenal_color) do |r,g,b|
       pnml_proceed(r,g,b)
+    end
+    
+    pnml_add_adaptation(:afternoon, ApplicationHelper, :display_hour) do 
+      image_tag("afternoon.jpg","data-caption"=>"We are in the after noon")
     end
     
     pnml_define_context(:evening)
     pnml_add_adaptation(:evening, ApplicationHelper, :phenomenal_color) do |r,g,b|
       k = 1.40
       pnml_proceed((r/k).to_i,(g/k).to_i,(b/k).to_i)
+    end
+    
+    pnml_add_adaptation(:evening, ApplicationHelper, :display_hour) do 
+      image_tag("evening.jpg","data-caption"=>"We are in the evening")
     end
 
     pnml_define_context(:internetexplorer)  
@@ -44,7 +56,7 @@ class InitContext
     end
     
     pnml_add_adaptation(:firefox, ApplicationHelper, :display_browser) do 
-      image_tag("firefox.png")
+      image_tag("firefox.png", "data-caption"=>"Your browser is firefox")
     end
     
     
@@ -54,7 +66,7 @@ class InitContext
     end
     
     pnml_add_adaptation(:chrome, ApplicationHelper, :display_browser) do 
-      image_tag("chrome.png")
+      image_tag("chrome.png", "data-caption"=>"Your browser is chrome")
     end
     
     pnml_define_context(:safari)  
@@ -64,12 +76,30 @@ class InitContext
     end
     
     pnml_add_adaptation(:safari, ApplicationHelper, :display_browser) do 
-      image_tag("safari.jpg")
+      image_tag("safari.jpg","data-caption"=>"Your browser is safari")
     end
+    
+    pnml_define_context(:linux) 
+    pnml_add_adaptation(:linux, ApplicationHelper, :display_os) do 
+      image_tag("linux.png","data-caption"=>"Your OS is linux")
+    end
+    pnml_define_context(:mac) 
+    pnml_add_adaptation(:mac, ApplicationHelper, :display_os) do 
+      image_tag("mac.jpg","data-caption"=>"Your OS is mac")
+    end
+    pnml_define_context(:windows) 
+    pnml_add_adaptation(:windows, ApplicationHelper, :display_os) do 
+      image_tag("windows.png","data-caption"=>"Your OS is windows")
+    end
+    
+    pnml_define_context(:belgium) 
+    pnml_add_adaptation(:belgium, ApplicationHelper, :display_location) do 
+      image_tag("http://maps.googleapis.com/maps/api/staticmap?center=Belgium&zoom=5&size=150x512&maptype=roadmap&sensor=false", "data-caption"=>"You are in Belgium")
+    end
+    pnml_define_context(:unknown_country) 
+    
 
-#    pnml_define_context(:geo_ip)
-#    pnml_add_adaptation(:geo_ip, ApplicationHelper, :phenomenal_color) do |red,green,blue|
-#      "yellow"
-#    end
+
+
   end
 end

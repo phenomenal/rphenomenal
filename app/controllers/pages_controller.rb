@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @title="HOME"
+    @title="Welcome on phenomenal-gem.com"
   end
 
 end
