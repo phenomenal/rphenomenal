@@ -49,6 +49,9 @@ class InitContext
     pnml_add_adaptation(:internetexplorer, ApplicationHelper, :phenomenal_color) do |r,g,b|
       pnml_proceed(r,g,b+25)
     end
+    pnml_add_adaptation(:internetexplorer, ApplicationHelper, :display_browser) do 
+      image_tag("internetexplorer.jpg", "data-caption"=>"Your browser is MS IE")
+    end
     
     pnml_define_context(:firefox)  
     pnml_add_adaptation(:firefox, ApplicationHelper, :phenomenal_color) do |r,g,b|

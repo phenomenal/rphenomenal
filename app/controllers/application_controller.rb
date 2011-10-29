@@ -25,6 +25,7 @@ class ApplicationController < ActionController::Base
     elsif user_agent[/(MSIE)/]
       pnml_activate_context(:internetexplorer) 
     end
+    
     # OS context
     if user_agent[/(Linux)/]
       pnml_activate_context(:linux) 
