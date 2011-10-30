@@ -23,7 +23,7 @@ class InitContext
     end
     
     pnml_add_adaptation(:morning, ApplicationHelper, :display_hour) do 
-      image_tag("morning.jpg", "data-caption"=>"We are in the morning")
+      image_tag("morning.jpeg", "data-caption"=>"We are in the morning")
     end
     
     pnml_define_context(:afternoon)
