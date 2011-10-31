@@ -32,8 +32,8 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: rphenomenal_production
+  database: rphenomenal_prod
   pool: 5
-  username: root
-  password:
+  username: rphenomenal_prod
+  password:WphX3vrKTpr95vRm
   host: localhost
