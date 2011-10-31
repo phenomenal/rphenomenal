@@ -35,5 +35,5 @@ production:
   database: rphenomenal_prod
   pool: 5
   username: rphenomenal_prod
-  password:WphX3vrKTpr95vRm
+  password: WphX3vrKTpr95vRm
   host: localhost
