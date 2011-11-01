@@ -12,3 +12,4 @@ $(document).ready(function() {
   });
   slide(0);
 })
+
