@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :activate_contexts
+  #before_filter :activate_contexts
   include ApplicationHelper
   private
   def activate_contexts
