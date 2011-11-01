@@ -6,9 +6,11 @@ ActionDispatch::Callbacks.before do
     end
     if !Rails.configuration.cache_classes
       pnml_forget_context(context)
+    end
   end
   if !Rails.configuration.cache_classes
     InitContext.define_contexts
+  end
 end
 
 class InitContext
