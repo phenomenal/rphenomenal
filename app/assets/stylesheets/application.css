@@ -5,3 +5,9 @@
  *= require 'blueprint/screen'
  *= require 'layout'
 */
+.context_adaptations_table {
+  display:none;
+}
+.context_adaptations_button img {
+  cursor:pointer;
+}

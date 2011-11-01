@@ -1,13 +1,13 @@
 # Fix problem without page caching
 ActionDispatch::Callbacks.before do
-  
-  if !Rails.configuration.cache_classes
-    pnml_defined_contexts.each do |context|
-      while pnml_context_active?(context) do
-        pnml_deactivate_context(context)
-      end
-      pnml_forget_context(context)
+  pnml_defined_contexts.each do |context|
+    while pnml_context_active?(context) do
+      pnml_deactivate_context(context)
     end
+    if !Rails.configuration.cache_classes
+      pnml_forget_context(context)
+  end
+  if !Rails.configuration.cache_classes
     InitContext.define_contexts
   end
 end
@@ -100,9 +100,5 @@ class InitContext
       image_tag("http://maps.googleapis.com/maps/api/staticmap?center=Belgium&zoom=6&size=500x150&maptype=roadmap&sensor=false", "data-caption"=>"You are in Belgium")
     end
     pnml_define_context(:unknown_country) 
-    
-
-
-
   end
 end

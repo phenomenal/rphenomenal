@@ -1,0 +1,8 @@
+$(document).ready(function() {
+  $('.test').click(function() {
+    var main_div=$(this);
+    main_div.children('.context_adaptations_table').slideToggle('slow', function() {
+      main_div.children('.context_adaptations_button').html('<%= image_tag("icons/inactive.png") %>');
+    });
+  });
+})

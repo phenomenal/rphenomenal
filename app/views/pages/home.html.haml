@@ -2,11 +2,11 @@
   =render "presenter"
 
 %h1=@title
-%h2 Active Contexts
-- pnml_defined_contexts.each do |c|
-  -if c.active?
-    =render "shared/context", :context=>c
-%h2 Inactive Contexts
-- pnml_defined_contexts.each do |c|
-  -if !c.active?
-    =render "shared/context", :context=>c
+%table
+  %thead
+    %th Name
+    %th State
+    %th Adaptations
+  -pnml_defined_contexts.each do |c|
+    %tbody
+      =render "shared/context", :context=>c

@@ -1,11 +1,23 @@
-%strong
-  %u
-    = context.to_s.capitalize
-%p
-  -if  context.active?
-    %strong Active
-  -else
-    Inactive
-  %br
-  Adaptations: 
-  =context.adaptations.size
+%tr
+  %td= context.to_s.capitalize
+  %td
+    -if context.active?
+      =image_tag "icons/active.png"
+    -else 
+      =image_tag "icons/inactive.png"
+  %td
+    %div.test
+      .context_adaptations_button
+        =image_tag "icons/active.png"
+      .context_adaptations_table
+        %table
+          %thead
+            %th Class
+            %th Method
+            %th Implementation
+          %tbody
+          -context.adaptations.each do |a|
+            %tr
+              %td=a.klass
+              %td=a.method_name
+              %td=a.implementation
