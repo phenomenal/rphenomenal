@@ -9,7 +9,6 @@ ActionDispatch::Callbacks.before do
   end
   if !Rails.configuration.cache_classes
     InitContext.define_contexts
-  end
 end
 
 class InitContext
