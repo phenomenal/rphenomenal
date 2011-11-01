@@ -104,5 +104,3 @@ class InitContext
     pnml_define_context(:unknown_country) 
   end
 end
-# First initialization
-InitContext.define_contexts
