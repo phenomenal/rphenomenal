@@ -1,13 +1,14 @@
-# Fix problem without page caching
 ActionDispatch::Callbacks.before do
   pnml_defined_contexts.each do |context|
     while pnml_context_active?(context) do
       pnml_deactivate_context(context)
     end
+    # Fix problem without page caching
     if !Rails.configuration.cache_classes
       pnml_forget_context(context)
     end
   end
+  # Fix problem without page caching
   if !Rails.configuration.cache_classes
     InitContext.define_contexts
   end
@@ -103,3 +104,5 @@ class InitContext
     pnml_define_context(:unknown_country) 
   end
 end
+# First initialization
+InitContext.define_contexts
