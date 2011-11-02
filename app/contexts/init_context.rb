@@ -1,7 +1,9 @@
 ActionDispatch::Callbacks.before do
   pnml_defined_contexts.each do |context|
-    while pnml_context_active?(context) do
-      pnml_deactivate_context(context)
+    if context != pnml_default_context || !Rails.configuration.cache_classes
+      while pnml_context_active?(context) do
+        pnml_deactivate_context(context) 
+      end
     end
     # Fix problem without page caching
     if !Rails.configuration.cache_classes
@@ -18,7 +20,6 @@ class InitContext
   pnml_change_conflict_policy { |a,b| age_conflict_policy(a,b) }
   # Context definition
   def self.define_contexts()
-    puts("-------------->DEEFFINNNNEE CONNTEEXXTT")
     pnml_define_context(:morning)
     pnml_add_adaptation(:morning, ApplicationHelper, :phenomenal_color) do |r,g,b|
       k = 1.40
