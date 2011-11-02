@@ -35,13 +35,13 @@ class ApplicationController < ActionController::Base
       pnml_activate_context(:mac)
     end
     
+    # Country context
     g = GeoIP.new("#{Rails.root}/app/assets/GeoIP.dat")
     country = g.country request.remote_ip
-    if country.country_name =="Belgium"
+    if country.country_name=="Belgium"
       pnml_activate_context(:belgium)
     else
       pnml_activate_context(:unknown_country)
     end 
-    
   end
 end

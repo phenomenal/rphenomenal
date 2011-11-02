@@ -53,7 +53,7 @@ class InitContext
       pnml_proceed(r,g,b+25)
     end
     pnml_add_adaptation(:internetexplorer, ApplicationHelper, :display_browser) do 
-      image_tag("internetexplorer.jpg", "data-caption"=>"Your browser is MS IE")
+      image_tag("contexts/browsers/ie.png", "data-caption"=>"Your browser is MS IE")
     end
     
     pnml_define_context(:firefox)  
@@ -62,7 +62,7 @@ class InitContext
     end
     
     pnml_add_adaptation(:firefox, ApplicationHelper, :display_browser) do 
-      image_tag("firefox.png", "data-caption"=>"Your browser is firefox")
+      image_tag("contexts/browsers/firefox.png", "data-caption"=>"Your browser is firefox")
     end
     
     
@@ -72,7 +72,7 @@ class InitContext
     end
     
     pnml_add_adaptation(:chrome, ApplicationHelper, :display_browser) do 
-      image_tag("chrome.png", "data-caption"=>"Your browser is chrome")
+      image_tag("contexts/browsers/chrome.png", "data-caption"=>"Your browser is chrome")
     end
     
     pnml_define_context(:safari)  
@@ -82,25 +82,28 @@ class InitContext
     end
     
     pnml_add_adaptation(:safari, ApplicationHelper, :display_browser) do 
-      image_tag("safari.jpg","data-caption"=>"Your browser is safari")
+      image_tag("contexts/browsers/safari.png","data-caption"=>"Your browser is safari")
     end
     
     pnml_define_context(:linux) 
     pnml_add_adaptation(:linux, ApplicationHelper, :display_os) do 
-      image_tag("linux.png","data-caption"=>"Your OS is linux")
+      image_tag("contexts/os/linux.png","data-caption"=>"Your OS is linux")
     end
     pnml_define_context(:mac) 
     pnml_add_adaptation(:mac, ApplicationHelper, :display_os) do 
-      image_tag("mac.jpg","data-caption"=>"Your OS is mac")
+      image_tag("contexts/os/mac.png","data-caption"=>"Your OS is mac")
     end
     pnml_define_context(:windows) 
     pnml_add_adaptation(:windows, ApplicationHelper, :display_os) do 
-      image_tag("windows.png","data-caption"=>"Your OS is windows")
+      image_tag("contexts/os/windows.png","data-caption"=>"Your OS is windows")
     end
-    
+    pnml_define_context(:android) 
+    pnml_add_adaptation(:android, ApplicationHelper, :display_os) do 
+      image_tag("contexts/os/android.png","data-caption"=>"Your OS is android")
+    end
     pnml_define_context(:belgium) 
     pnml_add_adaptation(:belgium, ApplicationHelper, :display_location) do 
-      image_tag("http://maps.googleapis.com/maps/api/staticmap?center=Belgium&zoom=6&size=500x150&maptype=roadmap&sensor=false", "data-caption"=>"You are in Belgium")
+      image_tag("http://maps.googleapis.com/maps/api/staticmap?center=Belgium&zoom=6&size=256x256&maptype=roadmap&sensor=false")
     end
     pnml_define_context(:unknown_country) 
   end

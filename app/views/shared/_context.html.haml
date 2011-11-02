@@ -1,14 +1,15 @@
 %tr
-  %td= context.to_s.capitalize
-  %td
+  %td.context_table_name_cell
+    = context.to_s.capitalize
+  %td.context_table_state_cell
     -if context.active?
-      =image_tag "icons/active.png"
+      =image_tag "icons/active_context.png"
     -else 
-      =image_tag "icons/inactive.png"
+      =image_tag "icons/inactive_context.png"
   %td
-    %div.test
+    %div.adaptations
       .context_adaptations_button
-        =image_tag "icons/active.png"
+        =image_tag "icons/show_adaptations.png"
       .context_adaptations_table
         %table
           %thead

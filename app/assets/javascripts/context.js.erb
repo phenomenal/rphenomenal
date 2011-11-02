@@ -1,8 +1,12 @@
 $(document).ready(function() {
-  $('.test').click(function() {
+  $('.adaptations').click(function() {
     var main_div=$(this);
-    main_div.children('.context_adaptations_table').slideToggle('slow', function() {
-      main_div.children('.context_adaptations_button').html('<%= image_tag("icons/inactive.png") %>');
+    main_div.children('.context_adaptations_table').slideToggle('normal', function() {
+    if (main_div.children('.context_adaptations_table').is(':visible')) {
+      main_div.children('.context_adaptations_button').html('<%= image_tag("icons/hide_adaptations.png") %>');
+    }else {
+      main_div.children('.context_adaptations_button').html('<%= image_tag("icons/show_adaptations.png") %>');
+    };
     });
   });
 })
