@@ -20,7 +20,6 @@ class InitContext
   pnml_change_conflict_policy { |a,b| age_conflict_policy(a,b) }
   # Context definition
   def self.define_contexts()
-    puts("-------------->DEEFFINNNNEE CONNTEEXXTT")
     pnml_define_context(:morning)
     pnml_add_adaptation(:morning, ApplicationHelper, :phenomenal_color) do |r,g,b|
       k = 1.40
