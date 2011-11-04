@@ -65,8 +65,7 @@ class InitContext
     pnml_add_adaptation(:firefox, ApplicationHelper, :display_browser) do 
       image_tag("contexts/browsers/firefox.png", "data-caption"=>"Your browser is firefox")
     end
-    
-    
+
     pnml_define_context(:chrome) 
     pnml_add_adaptation(:chrome, ApplicationHelper, :phenomenal_color) do |r,g,b|
       pnml_proceed(r+50,g+50,b-75)
@@ -98,10 +97,12 @@ class InitContext
     pnml_add_adaptation(:windows, ApplicationHelper, :display_os) do 
       image_tag("contexts/os/windows.png","data-caption"=>"Your OS is windows")
     end
+    
     pnml_define_context(:android) 
     pnml_add_adaptation(:android, ApplicationHelper, :display_os) do 
       image_tag("contexts/os/android.png","data-caption"=>"Your OS is android")
     end
+    
     pnml_define_context(:belgium) 
     pnml_add_adaptation(:belgium, ApplicationHelper, :display_location) do 
       image_tag("http://maps.googleapis.com/maps/api/staticmap?center=Belgium&zoom=6&size=256x256&maptype=roadmap&sensor=false")
