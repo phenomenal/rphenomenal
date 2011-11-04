@@ -1,4 +1,10 @@
 #header{:style=>"background-color:#{phenomenal_color(127,127,127)}"}
-  %h1 Phenomenal Gem
+  #main_title
+    Phenomenal Gem
   #menu
-    test | test
+    %ul
+      %li= link_to "Home", root_path
+      %li= link_to "Project", project_path
+      %li= link_to "Documentation", documentation_path
+      %li= link_to "Your context", context_path
+  .clear

@@ -17,8 +17,11 @@
             %th Method
             %th Implementation
           %tbody
-          -context.adaptations.each do |a|
-            %tr
-              %td=a.klass
-              %td=a.method_name
-              %td=a.implementation
+            -context.adaptations.each do |a|
+              %tr
+                %td=a.klass
+                %td=a.method_name
+                %td
+                  =a.src_file.scan(/\/app\/.*/)[0]
+                  \:
+                  =a.src_line

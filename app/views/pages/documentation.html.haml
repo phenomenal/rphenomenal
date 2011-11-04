@@ -1,0 +1,99 @@
+%h1=@title
+
+
+%h2 Install
+%p
+  Type the following line in a console:
+  %br
+  %i
+    [sudo] gem install phenomenal-*.gem
+
+
+%h2 Use
+%p
+  put the following line at the begining of the software in wich you want to use
+  the framework:
+  %br
+  %i
+    require 'phenomenal'
+
+
+%h2 Unit testing
+%p
+  Type the followings commands in a console:
+  %br
+  %i
+    rake test
+
+%h2 Source code
+%p 
+  The source code can be find in lib/phenomenal/
+
+
+%h2 API definition
+
+%h3 ctxt def(symbol)
+%p
+  Define a new context, referenced by ’symbol’.
+
+%h3 ctxt forget(symbol)
+%p 
+  Destroy the context, the context has to be inactive.
+
+%h3 ctxt add adaptation(context sym, class const, method sym ,umeth ) { |*args, &block| block }
+%p  
+  Add a new adaptation to the context, this adaptation concerns a method in a
+  class and its body is either the UnboundMethod umeth or the content of the
+  optional block. If umeth is used it has to be unbounded from a parent of, or,
+  from the target class. (Works even if context is already active)
+
+%h3 ctxt remove adaptation(context sym, class const, method sym)
+%p  
+  Remove an adaptation for a particular method from the context.
+  (Works even if context is already active)
+
+%h3 ctxt activate(symbol)
+%p
+  Activate the context and its adaptations
+
+%h3 ctxt deactivate(symbol)
+%p
+  Deactivate the context and its adaptations
+
+%h3 ctxt proceed(*args){ block }
+%p
+  This method should only be called in the definition of an adaptation.
+  It calls the under adaptation of the method (depending of the conflict
+  resolution policy) and pass the args and block to it.
+%h3 ctxt informations(symbol)
+%p
+  Return the following informations about the context:
+  %ul
+    %li name
+    %li Time of last activation
+    %li Time of creation
+    %li Activation age
+    %li List of the adaptation names
+    %li active state
+
+%h3 ctxt active?(symbol)
+%p
+  Return true if the context is currently active, false otherwise
+
+%h3 ctxt list
+%p
+  List all defined contexts
+
+%h3 ctxt list active
+%p
+  List all active contexts
+
+%h3 ctxt change policy { |a, b| block }
+%p
+  Change the conflict resolution policy used by the Context Manager. The
+  block passed must take two arguments (two adaptations to compare) and return
+  1 if the adaptation ’a’ has priority on adaptation ’b’, -1 if not or raise
+  an ContextError if the conflict is not solvable. Pre-implemented conflict
+  policies can be found in the ConflictPolicies module
+  (lib/phenomenal/utils.rb). The default policy is the no resolution policy
+  where only one adaptation can be active for a particular method.

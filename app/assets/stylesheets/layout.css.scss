@@ -2,28 +2,42 @@ body {
   background:lightgrey;
   font: 400 15px/24px "proxima-nova-1","proxima-nova-2","Helvetica Neue",Helvetica,sans-serif;
 }
-#header {
-  background:red;
-  
+#header{
+  padding:15px;
+  margin-bottom:15px;
+  #main_title{
+    font-size:2em;
+    float:left;
+  }
+  #menu {
+    float:right;
+    ul {
+      list-style-type:none;
+      
+      li {
+        margin-left:15px;
+       float:left;
+      }
+    }
+  }
 }
+
 #presenter {
-  width:948px;
-  height:250px;
+  width:950px;
+  height:175px;
   
   overflow:hidden; 
   
-  #presenter_mask{
-    width:10000000000000px;
-    
+  #presenter_mask{    
       .context_presenter{
       width:950px;
-      height:250px;
-      float:left;
+      height:175px;
+      
       
       img {
         float:left;
         margin-right:15px;
-        height:250px;
+        height:175px;
       }
     }
   }
@@ -52,4 +66,13 @@ body {
   a:hover{
     color:black;
   }
+}
+.clear {
+  clear:both
+}
+thead tr th{
+  background:lightgrey;
+}
+.center{
+  text-align:center;
 }
