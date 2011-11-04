@@ -23,10 +23,10 @@ class PhenomenalInitializer
     Locations::BelgiumContext.define
     Locations::UnknownCountryContext.define
     
-    OperatingSystems::LinuxContext.define
-    OperatingSystems::MacosContext.define
-    OperatingSystems::WindowsContext.define
-    OperatingSystems::AndroidContext.define
-    OperatingSystems::IosContext.define
+    OperatingSystems::Linux.define
+    OperatingSystems::Macos.define
+    OperatingSystems::Windows.define
+    OperatingSystems::Android.define
+    OperatingSystems::Ios.define
   end
 end

@@ -11,12 +11,23 @@ body {
   }
   #menu {
     float:right;
+    background:white;
+    margin:auto;
     ul {
       list-style-type:none;
       
       li {
-        margin-left:15px;
+       margin-left:5px;
+       margin-right:5px;
        float:left;
+       a {
+         text-decoration:none;
+         color:black;
+         font-weight:bold;
+       }
+       a:hover {
+          text-decoration:underline;
+        }
       }
     }
   }

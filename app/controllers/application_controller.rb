@@ -31,13 +31,13 @@ class ApplicationController < ActionController::Base
     
     # OS context
     if user_agent[/(Android)/]
-      pnml_activate_context(:android) 
+      pnml_activate_context(OperatingSystems::Android.name) 
     elsif user_agent[/(Linux)/]
-      pnml_activate_context(:linux) 
+      pnml_activate_context(OperatingSystems::Linux.name) 
     elsif user_agent[/(Windows)/]
-      pnml_activate_context(:windows) 
+      pnml_activate_context(OperatingSystems::Windows.name) 
     elsif user_agent[/(Mac)/]
-      pnml_activate_context(:macos)
+      pnml_activate_context(OperatingSystems::Macos.name)
     end
     
     # Country context
