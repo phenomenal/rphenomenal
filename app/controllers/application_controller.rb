@@ -6,16 +6,19 @@ class ApplicationController < ActionController::Base
   def activate_contexts
     # Hour contexts
     hour = Time.now.hour
-    if hour < 12
+    if hour > 6 && hour < 12
       pnml_activate_context(:morning) 
     elsif hour <18
       pnml_activate_context(:afternoon) 
-    elsif hour >= 18
+    elsif hour >= 18 && hour < 23
       pnml_activate_context(:evening) 
+    else
+       pnml_activate_context(:night) 
     end
     
     # Browser context
     user_agent = request.user_agent
+    puts user_agent
     if user_agent[/(Firefox)/]
       pnml_activate_context(:firefox) 
     elsif user_agent[/(Chrome)/]
@@ -27,12 +30,14 @@ class ApplicationController < ActionController::Base
     end
     
     # OS context
-    if user_agent[/(Linux)/]
+    if user_agent[/(Android)/]
+      pnml_activate_context(:android) 
+    elsif user_agent[/(Linux)/]
       pnml_activate_context(:linux) 
     elsif user_agent[/(Windows)/]
       pnml_activate_context(:windows) 
     elsif user_agent[/(Mac)/]
-      pnml_activate_context(:mac)
+      pnml_activate_context(:macos)
     end
     
     # Country context

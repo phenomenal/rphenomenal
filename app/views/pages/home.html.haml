@@ -2,11 +2,6 @@
   =render "presenter"
 
 %h1=@title
-%table
-  %thead
-    %th Name
-    %th State
-    %th Adaptations
-  -pnml_defined_contexts.each do |c|
-    %tbody
-      =render "shared/context", :context=>c
+%p
+  A context-oriented language extension for the Ruby language.
+

@@ -1,5 +1,8 @@
 Rphenomenal::Application.routes.draw do
   root :to=> "Pages#home"
+  match "/project", :to => "Pages#project"
+  match "/documentation", :to => "Pages#documentation"
+  match "/context", :to => "Pages#context"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
