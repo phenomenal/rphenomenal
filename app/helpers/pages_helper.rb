@@ -13,7 +13,7 @@ module PagesHelper
   end
   
   def display_location
-    image_tag("http://maps.googleapis.com/maps/api/staticmap?center=Belgium&zoom=0&size=940x175&maptype=roadmap&sensor=false")
+    image_tag("contexts/locations/unknown_country.png")
   end
   
   def phenomenal_color(r, g, b)
