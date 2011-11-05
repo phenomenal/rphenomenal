@@ -8,6 +8,7 @@ body {
   #main_title{
     font-size:2em;
     float:left;
+    color:white;
   }
   #menu {
     float:right;
@@ -70,12 +71,13 @@ body {
   filter: progid:DXImageTransform.Microsoft.Shadow(color='#c0c0c0',Direction=135,Strength=8);
 }
 #footer {
+  color: white;
   text-align:center;
   a {
-    color:black;
+    color:white;
   }
   a:hover{
-    color:black;
+    color:white;
   }
 }
 .clear {

@@ -6,27 +6,27 @@ class ApplicationController < ActionController::Base
   def activate_contexts
     # Hour contexts
     hour = Time.now.hour
-    if hour > 6 && hour < 12
-      pnml_activate_context(:morning) 
-    elsif hour <18
-      pnml_activate_context(:afternoon) 
+    if hour >= 6 && hour < 12
+      pnml_activate_context(DayTimes::Morning.name) 
+    elsif hour >= 12 && hour <18
+      pnml_activate_context(DayTimes::Afternoon.name) 
     elsif hour >= 18 && hour < 23
-      pnml_activate_context(:evening) 
+      pnml_activate_context(DayTimes::Evening.name) 
     else
-       pnml_activate_context(:night) 
+       pnml_activate_context(DayTimes::Night.name) 
     end
     
     # Browser context
     user_agent = request.user_agent
     puts user_agent
     if user_agent[/(Firefox)/]
-      pnml_activate_context(:firefox) 
+      pnml_activate_context(Browsers::Firefox.name) 
     elsif user_agent[/(Chrome)/]
-      pnml_activate_context(:chrome) 
+      pnml_activate_context(Browsers::Chrome.name) 
     elsif user_agent[/(Safari)/]
-      pnml_activate_context(:safari)
+      pnml_activate_context(Browsers::Safari.name)
     elsif user_agent[/(MSIE)/]
-      pnml_activate_context(:internetexplorer) 
+      pnml_activate_context(Browsers::InternetExplorer.name) 
     end
     
     # OS context
@@ -44,9 +44,9 @@ class ApplicationController < ActionController::Base
     g = GeoIP.new("#{Rails.root}/app/assets/GeoIP.dat")
     country = g.country request.remote_ip
     if country.country_name=="Belgium"
-      pnml_activate_context(:belgium)
+      pnml_activate_context(Locations::Belgium.name)
     else
-      pnml_activate_context(:unknown_country)
+      pnml_activate_context(Locations::UnknownCountry.name)
     end 
   end
 end

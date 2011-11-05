@@ -10,18 +10,18 @@ class PhenomenalInitializer
   
   # Context definition
   def self.define_contexts()
-    Browsers::ChromeContext.define
-    Browsers::FirefoxContext.define
-    Browsers::InternetExplorerContext.define
-    Browsers::SafariContext.define
+    Browsers::Chrome.define
+    Browsers::Firefox.define
+    Browsers::InternetExplorer.define
+    Browsers::Safari.define
     
-    DayTimes::MorningContext.define
-    DayTimes::AfternoonContext.define
-    DayTimes::EveningContext.define
-    DayTimes::NightContext.define
+    DayTimes::Morning.define
+    DayTimes::Afternoon.define
+    DayTimes::Evening.define
+    DayTimes::Night.define
     
-    Locations::BelgiumContext.define
-    Locations::UnknownCountryContext.define
+    Locations::Belgium.define
+    Locations::UnknownCountry.define
     
     OperatingSystems::Linux.define
     OperatingSystems::Macos.define
