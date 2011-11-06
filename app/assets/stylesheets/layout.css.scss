@@ -1,6 +1,59 @@
+html{
+  counter-reset:snippets;
+}
 body {
   background:lightgrey;
-  font: 400 15px/24px "proxima-nova-1","proxima-nova-2","Helvetica Neue",Helvetica,sans-serif;
+  font: 400 15px/24px Helvetica,Arial,sans-serif;
+   color:	#333333;
+   counter-reset:figures;
+}
+
+/* TITLES */
+h1 {
+  counter-reset:section;
+  font-size: 2.28em;
+  font-weight: bold;
+  line-height: 1em;
+  margin: 0.7em 0 0.2333em;
+  color: #333333;
+}
+h2 {
+  counter-reset:subsection;
+  font-size: 1.7em;
+  font-weight: bold;
+  line-height: 1em;
+  margin: 0.7em 0 0.2333em;
+  color:	#333333;
+  
+  &:before {
+    counter-increment:section;
+    content:"" counter(section) ". ";
+  }
+}
+h3 {
+  counter-reset:subsubsection;
+  font-size: 1.4em;
+  font-weight: bold;
+  line-height: 1.286em;
+  margin: 0.875em 0 0.2916em;
+  color:	#333333;
+  
+  &:before {
+    counter-increment:subsection;
+    content:counter(section) "." counter(subsection) " ";
+  }
+}
+h4 {
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1.286em;
+  margin: 0.875em 0 0.2916em;
+  color:	#333333;
+  
+  /*&:before {
+    counter-increment:subsubsection;
+    content:counter(section) "." counter(subsection) "." counter(subsubsection) " ";
+  }*/
 }
 #header{
   padding:15px;
@@ -54,7 +107,9 @@ body {
     }
   }
 }
-
+.container {
+  color:	#333333;
+}
 .hidden {
   display:none;
 }
@@ -88,4 +143,40 @@ thead tr th{
 }
 .center{
   text-align:center;
+}
+.code pre, tt {
+    font-family: "Anonymous Pro","Inconsolata","Menlo","Consolas","Bitstream Vera Sans Mono","Courier New",monospace;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.figure {
+  text-align:center;
+  p{
+    font-weight:bold;
+      &:before {
+      counter-increment:figures;
+      content:"Figure " counter(figures) ". ";
+    }
+  }
+}
+.code {
+  margin-bottom:10px;
+  margin-left:50px;
+  
+  p{
+    text-align:center;
+    margin:0;
+    font-weight:bold;
+      &:before {
+      counter-increment:snippets;
+      content:"Snippet " counter(snippets) ". ";
+    }
+  }
+  pre {
+    padding:10px;
+    background-color:#EEEEEE;
+    width:558px;
+    margin:auto;
+  }
 }
