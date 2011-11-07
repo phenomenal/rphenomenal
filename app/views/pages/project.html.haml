@@ -42,15 +42,15 @@ The following figure present the logical architecture of the framework
 %p
   This class has to be inherited by the classes that define the contexts
 .code
-  %pre
-    :preserve
-      class Locations::Belgium < Phenomenal::Declaration
-        def self.define 
-          pnml_def(PagesHelper, :display_location) do 
-            image_tag("contexts/locations/belgium.png") 
-          end 
+  :coderay
+    #!ruby
+    class Locations::Belgium < Phenomenal::Declaration
+      def self.define 
+        pnml_def(PagesHelper, :display_location) do 
+          image_tag("contexts/locations/belgium.png") 
         end 
-      end
+      end 
+    end
   %p Context definition example
   
 %p
@@ -69,15 +69,16 @@ The following figure present the logical architecture of the framework
   %br
   The user of the framework can easily add new conflict policies the following way:
 .code
-  %pre
-    :preserve
-      module Phenomenal::ConflictPolicies
-        # Priority based policy
-        def age_conflict_policy(adaptation1, adaptation2)
-          adaptation1.context.priority <=> adaptation2.context.priority
-        end
+  :coderay
+    #!ruby
+    module Phenomenal::ConflictPolicies
+      # Priority based policy
+      def age_conflict_policy(adaptation1, adaptation2)
+        adaptation1.context.priority <=> adaptation2.context.priority
       end
+    end
   %p Conflict policies example
+
 %h4  Phenomenal::DSL
 %p
   Define the DSL for the framework.

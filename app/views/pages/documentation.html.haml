@@ -62,9 +62,9 @@ Return a hash with the useful informations concerning the context:
   %tt Phenomenal::Manager
   \.
 .code
-  %pre
-    :preserve
-      pnml_change_conflict_policy { |a,b| age_conflict_policy(a,b) }
+  :coderay
+    #!ruby
+    pnml_change_conflict_policy { |a,b| age_conflict_policy(a,b) }
   %p Setting age policy
   
 
