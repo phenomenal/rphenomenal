@@ -1,12 +1,10 @@
 $(document).ready(function() {
-  $('.adaptations').click(function() {
-    var main_div=$(this);
-    main_div.children('.context_adaptations_table').slideToggle('normal', function() {
-    if (main_div.children('.context_adaptations_table').is(':visible')) {
-      main_div.children('.context_adaptations_button').html('<%= image_tag("icons/hide_adaptations.png") %>');
+  $('.adaptations .context_adaptations_button').click(function() {
+    if ($(this).parent().children('.context_adaptations_table').is(':visible')) {
+      $(this).html('<%= image_tag("icons/show_adaptations.png") %>');
     }else {
-      main_div.children('.context_adaptations_button').html('<%= image_tag("icons/show_adaptations.png") %>');
-    };
-    });
+      $(this).html('<%= image_tag("icons/hide_adaptations.png") %>');
+    }
+    $(this).parent().children('.context_adaptations_table').slideToggle('normal');
   });
 })

@@ -147,11 +147,7 @@ thead tr th{
 .center{
   text-align:center;
 }
-.code pre, tt {
-    font-family: "Anonymous Pro","Inconsolata","Menlo","Consolas","Bitstream Vera Sans Mono","Courier New",monospace;
-    font-size: 1em;
-    line-height: 1.5;
-}
+
 
 .figure {
   text-align:center;
@@ -163,10 +159,10 @@ thead tr th{
     }
   }
 }
-.code {
+.snippet {
   margin-bottom:10px;
-  margin-left:50px;
-  
+  width:740px;
+  margin:auto;
   p{
     text-align:center;
     margin:0;
@@ -179,7 +175,6 @@ thead tr th{
   pre {
     padding:10px;
     background-color:#EEEEEE;
-    width:558px;
     margin:auto;
   }
 }

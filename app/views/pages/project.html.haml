@@ -41,7 +41,7 @@ The following figure present the logical architecture of the framework
 %h4 Phenomenal::Declaration
 %p
   This class has to be inherited by the classes that define the contexts
-.code
+.snippet
   :coderay
     #!ruby
     class Locations::Belgium < Phenomenal::Declaration
@@ -68,7 +68,7 @@ The following figure present the logical architecture of the framework
   Implements the different conflict resolution policies, at this time: no resolution policy and age resolution policy.
   %br
   The user of the framework can easily add new conflict policies the following way:
-.code
+.snippet
   :coderay
     #!ruby
     module Phenomenal::ConflictPolicies
