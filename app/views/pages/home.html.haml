@@ -1,10 +1,37 @@
 - content_for :presenter do
   =render "presenter"
-%h1 Last revision
-%p
-  =@commit
 
-%h1=@title
-%p
-  A context-oriented extension for the Ruby language.
+#simple_description
+  Phenomenal Gem is a context-oriented framework implemented in Ruby that allows context-oriented programming in Ruby on Rails web applications.
 
+%h3 Current release
+%ul
+  %li 
+    %tt phenomenal
+    %br
+    =@commit_phenomenal
+  %li 
+    %tt phenomenal-rail
+    %br
+    =@commit_phenomenal
+  
+%h3 Our project
+The project was started in the context of our master thesis at UCL and we hope that it will still alive after this.
+Our goals in not only to implement a
+%acronym{:title=>"Context Oriented Programming"} COP
+framework but also to provide graceful integration in ruby on rails application to proof that
+%acronym{:title=>"Context Oriented Programming"} COP
+leads to better and lighter code.
+In that way, we will also provide some refactoring to bring non-context oriented applications to context-oriented applications.
+The next phase of the project is to work side by side with Belighted (A society specialized in
+%acronym{:title=>"Ruby on Rails"} ROR
+application) to apply and validate our considerations in one of their application.
+So, our work is first to develop the framework 
+%tt phenomenal 
+gem that allow
+%acronym{:title=>"Context Oriented Programming"} COP
+in Ruby application and then
+%tt phenomenal-rails 
+that will embed the glue for the
+%acronym{:title=>"Ruby on Rails"} ROR
+web framework.

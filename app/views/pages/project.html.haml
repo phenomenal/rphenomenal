@@ -1,24 +1,15 @@
 .documentation
   %h1=@title
-  %p
-    Phenomenal is a gem that brings the
-    %acronym{:title=>"Context Oriented Programming"} COP 
-    paradigms to the Ruby language and is developed by Loïc Vigneron and Thibault Poncelet in the context of their master thesis.
-    Beside the 
-    %tt phenomenal 
-    gem we will also provide 
-    %tt phenomenal-rails 
-    that will embed the glue for the Ruby on Rails web framework.
-    
+  
   %h2 Phenomenal
-  %h3 Overview 
   The framework use Ruby meta programming capabilities in order to adapt the behavior of the applications an add a 
   %acronym{:title=>"Domain specific language"}
-    DSL.
+    DSL
+  \.
   This mean that any existing application can become Context Oriented simply by using 
   %tt require 'phenomenal'
   \.
-    
+  
   %h3 Architecture
   The following figure present the logical architecture of the framework
   #use_diagram.figure
@@ -80,25 +71,25 @@
       end
     %p Conflict policies example
 
-  %h4  Phenomenal::DSL
-  %p
-    Define the DSL for the framework.
-    This is only syntactic sugar to simplify developpers life.
-    
-  %h4  Phenomenal::Logger
-  %p
-    Handle exceptions raised in the framework and log them.
-    
-  %h4 Phenomenal::Error
-  %p
-    Models an exception for context errors
-  %h4  Proc
-  %p
-    The two methods are added to the 
-    %tt Proc
-    object to be able to bind proc's to classes and object at runtime to implement the proceed mechanism.
-    
-  %h2 Phenomenal Rails
-  %p.center
-    %strong
-      Comming soon
+%h4  Phenomenal::DSL
+%p
+  Define the DSL for the framework.
+  This is only syntactic sugar to simplify developpers life.
+  
+%h4  Phenomenal::Logger
+%p
+  Handle exceptions raised in the framework and log them.
+  
+%h4 Phenomenal::Error
+%p
+  Models an exception for context errors
+%h4  Proc
+%p
+  The two methods are added to the 
+  %tt Proc
+  object to be able to bind proc's to classes and object at runtime to implement the proceed mechanism.
+  
+%h2 Phenomenal Rails
+%p.center
+  %strong
+    Coming soon

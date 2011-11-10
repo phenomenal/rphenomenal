@@ -12,11 +12,11 @@ class PagesController < ApplicationController
     entry.content    # => "..."
     entry.published  # => Thu Jan 29 17:00:19 UTC 2009 # it's a Time object
     entry.categories # => ["...", "..."]
-    @commit ="#{entry.title} - #{entry.published} - #{entry.author}"
+    @commit_phenomenal="#{entry.title} - #{entry.published} - #{entry.author}"
   end
   
   def project
-    @title="Project Presentation"
+    @title="Project implementation"
   end
   
   def documentation
@@ -25,6 +25,6 @@ class PagesController < ApplicationController
   end
   
   def context
-    @title="Running contexts"
+    @title="Defined contexts"
   end
 end
