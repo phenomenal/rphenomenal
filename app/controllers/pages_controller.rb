@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   end
   
   def project
-    @title="Project Presentation"
+    @title="Project implementation"
   end
   
   def documentation
