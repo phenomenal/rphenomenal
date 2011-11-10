@@ -13,7 +13,7 @@ gem 'phenomenal', :git => "git@git.phenomenal-gem.com:phenomenal.git"
 gem 'fractals'
 gem 'geoip'
 gem 'haml-coderay'
-gem 'git'
+gem 'feedzirra'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

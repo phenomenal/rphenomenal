@@ -1,17 +1,18 @@
 class PagesController < ApplicationController
   def home
     @title="Welcome on phenomenal-gem.com"
-    if Rails.env.production? 
-      gr = Git.open ('/var/www/rphenomenal')
-      cr = gr.log.first
-      g = Git.open ('/var/www/phenomenal')
-      c = g.log.first
-      @commit_rphenomenal ="#{l cr.date} - #{cr.message}"
-      @commit_phenomenal ="#{l c.date} - #{c.message}"
-    else
-      @commit_rphenomenal = "Last commit dev mode"
-      @commit_phenomenal = "Last commit dev mode"
-    end
+    # fetching a single feed
+    feed = Feedzirra::Feed.fetch_and_parse("http://redmine.phenomenal-gem.com/projects/phenomenal/repository/revisions.atom?key=5769b0cc85a55d8dbed695fff0068ebcb78582be")
+
+    entry = feed.entries.first
+    entry.title      # => "Ruby Http Client Library Performance"
+    entry.url        # => "http://www.pauldix.net/2009/01/ruby-http-client-library-performance.html"
+    entry.author     # => "Paul Dix"
+    entry.summary    # => "..."
+    entry.content    # => "..."
+    entry.published  # => Thu Jan 29 17:00:19 UTC 2009 # it's a Time object
+    entry.categories # => ["...", "..."]
+    @commit_phenomenal="#{entry.title} - #{entry.published} - #{entry.author}"
   end
   
   def project
