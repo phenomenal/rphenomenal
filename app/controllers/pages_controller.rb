@@ -2,11 +2,15 @@ class PagesController < ApplicationController
   def home
     @title="Welcome on phenomenal-gem.com"
     if Rails.env.production? 
-      g = Git.open ('/var/www/rphenomenal')
+      gr = Git.open ('/var/www/rphenomenal')
+      cr = gr.log.first
+      g = Git.open ('/var/www/phenomenal')
       c = g.log.first
-      @commit ="#{l c.date} - #{c.author.name} - #{c.message}"
+      @commit_rphenomenal ="#{l cr.date} - #{cr.message}"
+      @commit_phenomenal ="#{l c.date} - #{c.message}"
     else
-      @commit = "Last commit dev mode"
+      @commit_rphenomenal = "Last commit dev mode"
+      @commit_phenomenal = "Last commit dev mode"
     end
   end
   
@@ -20,6 +24,6 @@ class PagesController < ApplicationController
   end
   
   def context
-    @title="Running contexts"
+    @title="Defined contexts"
   end
 end

@@ -1,27 +1,33 @@
 - content_for :presenter do
   =render "presenter"
-%h1 Last revision
-%p
-  =@commit
 
 #simple_description
-  Phenomenal Gem is a context-oriented framework implemented in Ruby to allow COP in Ruby on Rails web applications.
+  Phenomenal Gem is a context-oriented framework implemented in Ruby that allows context-oriented programming in Ruby on Rails web applications.
 
 %h3 Current release
 %ul
-  %li Phenomenal Gem Ruby framework 
-  TODO
-  %li Phenomenal Gem Rails integration
-
-%h3 What we do
-The project was started in the context of our master thesis at UCL and we hope that it will still alive after this. Our goals in not only to implement a COP framework but also to provide graceful integration in ruby on rails application to proof that COP leads to best and lighter code. In that way, we also have to provide some refactoring to port non-context oriented applications to context-oriented application.The next phase of the project is to work side by side with Belighted (A society specialized in ROR application) to apply and validate our considerations in one of their application.
+  %li Phenomenal Gem Ruby 
+  =@commit_rphenomenal
+  %li Phenomenal Gem Rails
+  =@commit_rphenomenal
   
-%p
-  Phenomenal is a gem that brings the
-  %acronym{:title=>"Context Oriented Programming"} COP
-  paradigms to the Ruby language and is developed by Loïc Vigneron and Thibault Poncelet in the context of their master thesis.
-  Beside the 
-  %tt phenomenal 
-  gem we will also provide 
-  %tt phenomenal-rails 
-  that will embed the glue for the Ruby on Rails web framework.
+%h3 Our project
+The project was started in the context of our master thesis at UCL and we hope that it will still alive after this.
+Our goals in not only to implement a
+%acronym{:title=>"Context Oriented Programming"} COP
+framework but also to provide graceful integration in ruby on rails application to proof that
+%acronym{:title=>"Context Oriented Programming"} COP
+leads to better and lighter code.
+In that way, we will also provide some refactoring to bring non-context oriented applications to context-oriented applications.
+The next phase of the project is to work side by side with Belighted (A society specialized in
+%acronym{:title=>"Ruby on Rails"} ROR
+application) to apply and validate our considerations in one of their application.
+So, our work is first to develop the framework 
+%tt phenomenal 
+gem that allow
+%acronym{:title=>"Context Oriented Programming"} COP
+in Ruby application and then
+%tt phenomenal-rails 
+that will embed the glue for the
+%acronym{:title=>"Ruby on Rails"} ROR
+web framework.
