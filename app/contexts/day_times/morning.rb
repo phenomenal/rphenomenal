@@ -6,7 +6,7 @@ class DayTimes::Morning < Phenomenal::Declaration
     end
     
     pnml_def(PagesHelper, :display_hour) do 
-      asset_path("contexts/day_times/morning.png")
+      asset_path("contexts/day_times/morning.jpg")
     end
   end
 end

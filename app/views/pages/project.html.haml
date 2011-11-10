@@ -14,62 +14,84 @@ The following figure present the logical architecture of the framework
 #use_diagram.figure
   =display_phenomenal_use_diagram
   %p
-    Use diagram
+    Phenomenal is a gem that brings the
+    %acronym{:title=>"Context Oriented Programming"} COP 
+    paradigms to the Ruby language and is developed by Loïc Vigneron and Thibault Poncelet in the context of their master thesis.
+    Beside the 
+    %tt phenomenal 
+    gem we will also provide 
+    %tt phenomenal-rails 
+    that will embed the glue for the Ruby on Rails web framework.
     
-%h4 Phenomenal::Manager
-%p
-  Models the management of contexts, it includes the Singleton module in order to ensure that only one instance exist at any time.
-  Contexts will register themselves and notify their states update to it so that it can decide wich adapation deploy and wich is the next adaptation 
-  in the case of a 
-  %tt pnml_proceed 
-  call
-  
-  
-%h4  Phenomenal::Context
-%p
-  Models a first class context with the different adaptations, it's activation age,...
-  
-%h4 Phenomenal::Declaration
-%p
-  This class has to be inherited by the classes that define the contexts
-.snippet
-  :coderay
-    #!ruby
-    class Locations::Belgium < Phenomenal::Declaration
-      def self.define 
-        pnml_def(PagesHelper, :display_location) do 
-          image_tag("contexts/locations/belgium.png") 
+  %h2 Phenomenal
+  %h3 Overview 
+  The framework use Ruby meta programming capabilities in order to adapt the behavior of the applications an add a 
+  %acronym{:title=>"Domain specific language"}
+    DSL.
+  This mean that any existing application can become Context Oriented simply by using 
+  %tt require 'phenomenal'
+  \.
+    
+  %h3 Architecture
+  The following figure present the logical architecture of the framework
+  #use_diagram.figure
+    =display_phenomenal_use_diagram
+    %p
+      Use diagram
+      
+  %h4 Phenomenal::Manager
+  %p
+    Models the management of contexts, it includes the Singleton module in order to ensure that only one instance exist at any time.
+    Contexts will register themselves and notify their states update to it so that it can decide wich adapation deploy and wich is the next adaptation 
+    in the case of a 
+    %tt pnml_proceed 
+    call
+    
+    
+  %h4  Phenomenal::Context
+  %p
+    Models a first class context with the different adaptations, it's activation age,...
+    
+  %h4 Phenomenal::Declaration
+  %p
+    This class has to be inherited by the classes that define the contexts
+  .snippet
+    :coderay
+      #!ruby
+      class Locations::Belgium < Phenomenal::Declaration
+        def self.define 
+          pnml_def(PagesHelper, :display_location) do 
+            image_tag("contexts/locations/belgium.png") 
+          end 
         end 
-      end 
-    end
-  %p Context definition example
-  
-%p
-  In this example we have the definition of the named context 
-  %tt Locations::Belgium
-  that adapt the 
-  %tt PagesHelper.display_location
-  by replacing the image returned
-%h4  Phenomenal::Adaptation
-%p  
-  Models a particular adaptation for a method in a particular context
-  
-%h4 Phenomenal::ConflictPolicies
-%p
-  Implements the different conflict resolution policies, at this time: no resolution policy and age resolution policy.
-  %br
-  The user of the framework can easily add new conflict policies the following way:
-.snippet
-  :coderay
-    #!ruby
-    module Phenomenal::ConflictPolicies
-      # Priority based policy
-      def age_conflict_policy(adaptation1, adaptation2)
-        adaptation1.context.priority <=> adaptation2.context.priority
       end
-    end
-  %p Conflict policies example
-
+    %p Context definition example
+    
+  %p
+    In this example we have the definition of the named context 
+    %tt Locations::Belgium
+    that adapt the 
+    %tt PagesHelper.display_location
+    by replacing the image returned
+  %h4  Phenomenal::Adaptation
+  %p  
+    Models a particular adaptation for a method in a particular context
+    
+  %h4 Phenomenal::ConflictPolicies
+  %p
+    Implements the different conflict resolution policies, at this time: no resolution policy and age resolution policy.
+    %br
+    The user of the framework can easily add new conflict policies the following way:
+  .snippet
+    :coderay
+      #!ruby
+      module Phenomenal::ConflictPolicies
+        # Priority based policy
+        def age_conflict_policy(adaptation1, adaptation2)
+          adaptation1.context.priority <=> adaptation2.context.priority
+        end
+      end
+    %p Conflict policies example
 %h4  Phenomenal::DSL
 %p
   Define the DSL for the framework.
@@ -92,3 +114,4 @@ The following figure present the logical architecture of the framework
 %p.center
   %strong
     Coming soon
+

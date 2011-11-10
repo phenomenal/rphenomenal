@@ -1,70 +1,69 @@
-%h1=@title
+.documentation
+  %h1=@title
+  %h2 Phenomenal
+  %h3 Download
+  %p
+    Coming soon
+  %h3 Domain Specific Language
+  %h4  pnml_define_context(name=nil,priority=nil)
+  %p
+    Define a new context with optional name and priority.
+  %h4 pnml_forget_context(context)
+  %p
+    Forget a context (must be inactive before).
+    
+  %h4 pnml_add_adaptation(context,klass, method_name, &implementation)
+  %p
+    Add an adaptation to a context for class 
+    %tt klass
+    and method
+    %tt method_name
+    with the block as implementation.
 
-%h2 Phenomenal
-%h3 Download
-%p
-  Coming soon
-%h3 Domain Specific Language
-%h4  pnml_define_context(name=nil,priority=nil)
-%p
-  Define a new context with optional name and priority.
+  %h4 pnml_remove_adaptation(context,klass,method_name) 
+  %p 
+    Remove an adaptation from a context.
 
-%h4 pnml_forget_context(context)
-%p
-  Forget a context (must be inactive before).
-  
-%h4 pnml_add_adaptation(context,klass, method_name, &implementation)
-%p
-  Add an adaptation to a context for class 
-  %tt klass
-  and method
-  %tt method_name
-  with the block as implementation.
+  %h4 pnml_deactivate_context(context)
+  %p
+    Deactivate a context (the context will became inactive only if as many deactivations has been performed than the number of activations.
 
-%h4 pnml_remove_adaptation(context,klass,method_name) 
-%p 
-  Remove an adaptation from a context.
+  %h4 pnml_context_active?(context)
+  %p
+    Return true if 
+    %tt context
+    is active
 
-%h4 pnml_deactivate_context(context)
-%p
-  Deactivate a context (the context will became inactive only if as many deactivations has been performed than the number of activations.
+  %h4 pnml_context_informations(context)
+  Return a hash with the useful informations concerning the context:
+  %ul
+    %li Name
+    %li List of the adaptations names
+    %li Active state
+    %li Activation age
 
-%h4 pnml_context_active?(context)
-%p
-  Return true if 
-  %tt context
-  is active
+  %h4 pnml_default_context
+  %p
+    Return the default context (containing the default adaptations of the methods).
 
-%h4 pnml_context_informations(context)
-Return a hash with the useful informations concerning the context:
-%ul
-  %li Name
-  %li List of the adaptations names
-  %li Active state
-  %li Activation age
+  %h4 pnml_defined_contexts    
+  %p
+    Return the list of defined contexts (the ones registered in the manager).
 
-%h4 pnml_default_context
-%p
-  Return the default context (containing the default adaptations of the methods).
+  %h4 pnml_proceed(*args,&block)
+  %p
+    Call the underneath adaptation for the method calling this one.
+    The adaptation that will be called depends of the conflict resolution policy.
 
-%h4 pnml_defined_contexts    
-%p
-  Return the list of defined contexts (the ones registered in the manager).
-
-%h4 pnml_proceed(*args,&block)
-%p
-  Call the underneath adaptation for the method calling this one.
-  The adaptation that will be called depends of the conflict resolution policy.
-
-%h4 pnml_change_conflict_policy(&block)
-%p
-  Allow to change the conflict resolution policy used by 
-  %tt Phenomenal::Manager
-  \.
-.snippet
-  :coderay
-    #!ruby
-    pnml_change_conflict_policy { |a,b| age_conflict_policy(a,b) }
-  %p Setting age policy
-  
+  %h4 pnml_change_conflict_policy(&block)
+  %p
+    Allow to change the conflict resolution policy used by 
+    %tt Phenomenal::Manager
+    \.
+  .snippet
+    :coderay
+      #!ruby
+      pnml_change_conflict_policy { |a,b| age_conflict_policy(a,b) }
+    %p Setting age policy
+    
 

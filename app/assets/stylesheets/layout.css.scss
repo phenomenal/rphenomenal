@@ -10,7 +10,6 @@ body {
 
 /* TITLES */
 h1 {
-  counter-reset:section;
   font-size: 2.28em;
   font-weight: bold;
   line-height: 1em;
@@ -18,30 +17,19 @@ h1 {
   color: #333333;
 }
 h2 {
-  counter-reset:subsection;
   font-size: 1.7em;
   font-weight: bold;
   line-height: 1em;
   margin: 0.7em 0 0.2333em;
   color:	#333333;
-  
-  &:before {
-    counter-increment:section;
-    content:"" counter(section) ". ";
-  }
 }
 h3 {
-  counter-reset:subsubsection;
   font-size: 1.4em;
   font-weight: bold;
   line-height: 1.286em;
   margin: 0.875em 0 0.2916em;
   color:	#333333;
-  
-  &:before {
-    counter-increment:subsection;
-    content:counter(section) "." counter(subsection) " ";
-  }
+
 }
 h4 {
   font-size: 1.2em;
@@ -49,11 +37,33 @@ h4 {
   line-height: 1.286em;
   margin: 0.875em 0 0.2916em;
   color:	#333333;
-  
-  /*&:before {
-    counter-increment:subsubsection;
-    content:counter(section) "." counter(subsection) "." counter(subsubsection) " ";
-  }*/
+}
+.documentation{
+  h1 {
+    counter-reset:section;
+  }
+  h2 {
+    counter-reset:subsection;
+    
+    &:before {
+      counter-increment:section;
+      content:"" counter(section) ". ";
+    }
+  }
+  h3 {
+    counter-reset:subsubsection;
+
+    &:before {
+      counter-increment:subsection;
+      content:counter(section) "." counter(subsection) " ";
+    }
+  }
+  h4 {
+    /*&:before {
+      counter-increment:subsubsection;
+      content:counter(section) "." counter(subsection) "." counter(subsubsection) " ";
+    }*/
+  }
 }
 acronym {
   cursor:help;
