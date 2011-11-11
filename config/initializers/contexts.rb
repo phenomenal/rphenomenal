@@ -1,4 +1,5 @@
 ActionDispatch::Callbacks.before do
+  
   pnml_defined_contexts.each do |context|
     if context != pnml_default_context || !Rails.configuration.cache_classes
       while pnml_context_active?(context) do
@@ -9,6 +10,31 @@ ActionDispatch::Callbacks.before do
     if !Rails.configuration.cache_classes
       pnml_forget_context(context)
     end
+  end
+  
+  if !Rails.configuration.cache_classes
+    load "#{Rails.root}/app/contexts/browsers/"
+    Browsers::Chrome
+    Browsers::Firefox
+    Browsers::InternetExplorer
+    Browsers::Safari
+
+    DayTimes::DayTimes
+    DayTimes::Morning
+    DayTimes::Afternoon
+    DayTimes::Evening
+    DayTimes::Night
+
+    Locations::Locations
+    Locations::Belgium
+    Locations::UnknownCountry
+
+    OperatingSystems::OperatingSystems
+    OperatingSystems::Linux
+    OperatingSystems::Macos
+    OperatingSystems::Windows
+    OperatingSystems::Android
+    OperatingSystems::Ios
   end
 end
 
