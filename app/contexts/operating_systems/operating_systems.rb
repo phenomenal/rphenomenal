@@ -1,5 +1,5 @@
 class OperatingSystems::OperatingSystems
-  act_as_context
+  act_as_context :persistent
   
   adaptations_for Phenomenal::Middelware
   

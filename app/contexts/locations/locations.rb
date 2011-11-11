@@ -1,5 +1,5 @@
 class Locations::Locations
-  act_as_context
+  act_as_context :persistent
   
   adaptations_for Phenomenal::Middelware
   
