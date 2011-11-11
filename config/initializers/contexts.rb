@@ -35,6 +35,12 @@ ActionDispatch::Callbacks.before do
     OperatingSystems::Windows
     OperatingSystems::Android
     OperatingSystems::Ios
+  else
+    pnml_activate_context("Browsers::Browsers")
+    pnml_activate_context("DayTimes::DayTimes")
+    pnml_activate_context("Locations::Locations")
+    pnml_activate_context("OperatingSystems::OperatingSystems")
+    
   end
 end
 
