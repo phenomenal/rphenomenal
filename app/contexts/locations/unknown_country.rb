@@ -1,5 +1,3 @@
-class Locations::UnknownCountry < Phenomenal::Declaration
-  def self.define
-    pnml_define_context(self.name) 
-  end
+class Locations::UnknownCountry
+  act_as_context
 end

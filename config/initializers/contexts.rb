@@ -10,10 +10,6 @@ ActionDispatch::Callbacks.before do
       pnml_forget_context(context)
     end
   end
-  # Fix problem without page caching
-  if !Rails.configuration.cache_classes
-    PhenomenalInitializer.define_contexts
-  end
 end
 
 # Initialization of the contexts
