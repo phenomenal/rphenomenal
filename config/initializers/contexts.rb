@@ -13,7 +13,7 @@ ActionDispatch::Callbacks.before do
   end
   
   if !Rails.configuration.cache_classes
-    load "#{Rails.root}/app/contexts/browsers/"
+    Browsers::Browsers
     Browsers::Chrome
     Browsers::Firefox
     Browsers::InternetExplorer
