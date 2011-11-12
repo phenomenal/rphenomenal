@@ -1,7 +1,7 @@
 class OperatingSystems::OperatingSystems
   act_as_context :persistent
   
-  adaptations_for Phenomenal::Middelware
+  adaptations_for Phenomenal::Middleware
   
   adapt :activation_handler do |env|
     user_agent = env["HTTP_USER_AGENT"]

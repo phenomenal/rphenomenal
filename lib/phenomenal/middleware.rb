@@ -1,10 +1,10 @@
-class Phenomenal::Middelware
+class Phenomenal::Middleware
   def initialize(app)
     @app=app
   end
   
   def call(env)
-   Phenomenal::Middelware.activation_handler(env)
+   Phenomenal::Middleware.activation_handler(env)
     @app.call(env)
   end
   #TODO WHY CLASS ????

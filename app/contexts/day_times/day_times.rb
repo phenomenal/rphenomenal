@@ -1,6 +1,6 @@
 class DayTimes::DayTimes
   act_as_context :persistent
-  adaptations_for Phenomenal::Middelware
+  adaptations_for Phenomenal::Middleware
   adapt :activation_handler do |env|
     hour = Time.now.hour
     if hour >= 6 && hour < 12
