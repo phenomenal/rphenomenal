@@ -1,5 +1,6 @@
 class Locations::UnknownCountry
   act_as_context
+  
   adaptations_for PagesHelper
   
   adapt :display_location do

@@ -5,9 +5,7 @@ class Locations::Locations
   
   adapt :activation_handler do |env|
     g = GeoIP.new("#{Rails.root}/app/assets/GeoIP.dat")
-    puts env
-    country = g.country env["REMOTE_HOST"]
-    puts "**************#{country}"
+    country = g.country env["REMOTE_ADDR"]
     if country.country_name=="Belgium"
       pnml_activate_context(Locations::Belgium.name)
     else
