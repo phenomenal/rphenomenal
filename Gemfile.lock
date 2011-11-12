@@ -1,8 +1,8 @@
 GIT
   remote: git@git.phenomenal-gem.com:phenomenal.git
-  revision: 04649fa07e894f7adaf10af9be9daa07a7e588f2
+  revision: 009bd4cf0c956df6e7b0abbe2fb037d5fff5c087
   specs:
-    phenomenal (0.6.2.13)
+    phenomenal (0.6.2.13.2)
 
 GEM
   remote: http://rubygems.org/
