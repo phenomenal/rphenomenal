@@ -1,8 +1,6 @@
 class DayTimes::DayTimes
   act_as_context :persistent
-  
   adaptations_for Phenomenal::Middelware
-  
   adapt :activation_handler do |env|
     hour = Time.now.hour
     if hour >= 6 && hour < 12
@@ -16,6 +14,5 @@ class DayTimes::DayTimes
     end
     pnml_proceed(env)
   end
-  
   pnml_activate_context(self.name)
 end

@@ -32,25 +32,8 @@
     
   %h4 Phenomenal::Declaration
   %p
-    This class has to be inherited by the classes that define the contexts
-  .snippet
-    :coderay
-      #!ruby
-      class Locations::Belgium < Phenomenal::Declaration
-        def self.define 
-          pnml_def(PagesHelper, :display_location) do 
-            image_tag("contexts/locations/belgium.png") 
-          end 
-        end 
-      end
-    %p Context definition example
-    
-  %p
-    In this example we have the definition of the named context 
-    %tt Locations::Belgium
-    that adapt the 
-    %tt PagesHelper.display_location
-    by replacing the image returned
+    This class define some method that are principally used to define context and 
+    add adaptions in rails application.
   %h4  Phenomenal::Adaptation
   %p  
     Models a particular adaptation for a method in a particular context
@@ -71,25 +54,157 @@
       end
     %p Conflict policies example
 
-%h4  Phenomenal::DSL
-%p
-  Define the DSL for the framework.
-  This is only syntactic sugar to simplify developpers life.
+  %h4  Phenomenal::DSL
+  %p
+    Define the DSL for the framework.
+    This is only syntactic sugar to simplify developpers life.
   
-%h4  Phenomenal::Logger
-%p
-  Handle exceptions raised in the framework and log them.
+  %h4  Phenomenal::Logger
+  %p
+    Handle exceptions raised in the framework and log them.
   
-%h4 Phenomenal::Error
-%p
-  Models an exception for context errors
-%h4  Proc
-%p
-  The two methods are added to the 
-  %tt Proc
-  object to be able to bind proc's to classes and object at runtime to implement the proceed mechanism.
+  %h4 Phenomenal::Error
+  %p
+    Models an exception for context errors
+  %h4  Proc
+  %p
+    The two methods are added to the 
+    %tt Proc
+    object to be able to bind proc's to classes and object at runtime to implement the proceed mechanism.
   
-%h2 Phenomenal Rails
-%p.center
-  %strong
-    Coming soon
+  %h2 Phenomenal Rails
+  This step consists to find the best way to integrate our COP framework into rails applications.
+  Best way means that we have to deal with the framework’s functionalities,
+  the load of using this framework and the respect of the ‘Rails Way’.
+  %h3 Framework integration
+  #rails_tree
+    .figure
+      =image_tag("project/rails_tree_diagram.png") 
+    %h4 Contexts directory structure
+    We create a ‘contexts’ directory in the ‘app’ one of rails in order to contain all the context declaration files.
+    For example ‘day_time’ is the directory that group all the contexts about day times.
+    The file ‘afternoon.rb’ define the context afternoon (See 
+    %strong Context declaration
+    ) and the file
+    'day_time' define the rules when the contexts in the directory are activated (See
+    %strong Context activation
+    ).
+    %br
+    In this example, we define four groups of contexts related to:
+    #contexts_list
+      %ul
+        %li 
+          Browsers: Chrome, Firefox, Internet Explorer, Safari
+        %li 
+          Day times: Morning, Afternoon, Evening, Night
+        %li 
+          Locations: Belgium, Unknown Country
+        %li 
+          Day times: Android, Ios, Linux, Macos, Windows
+    %h4 Initialization
+    The ‘phenomenal_initializer.rb’ is the file that contains all the directives needed for the framework initialization.
+    By default, we simply define the default conflict policy.
+    %h4 Loading
+    The framework needs also to be loaded at the loading of the rails application.
+    We add the file ‘contexts.rb’ in the initializers of rails.
+    At this step, we also load all the contexts present in the ‘contexts’ directory and its sub-directories.
+    In addition, this files allows the framework to work as well in the production or development environment.
+    We also define the 
+    %tt ActionDispatch::Callbacks.before
+    method to fix the issue with the request repartitions of the rails server. Those problems are explained in
+    details in the 
+    %strong Issues occurred
+    section.
+    %h4 Middleware
+    Finally, we add a 'middleware.rb' file in the lib directory in order to handle the context activation before
+    calling the controller. In this class, we define the method
+    %tt def self.activation_handler(env)
+    that need to be adapted with the conditions in which we want to activate some context (see
+    %strong Context activation
+    ).
+  .clear
+  %h3 Context declaration
+  .snippet
+    :coderay
+      #!ruby
+      class DayTimes::Morning
+        act_as_context
+        adaptations_for PagesHelper
+        adapt :phenomenal_color do |r,g,b|
+          k = 1.40
+          pnml_proceed((r*k).to_i,(g*k).to_i,(b*k).to_i)
+        end
+        adapt :display_hour do 
+          asset_path("contexts/day_times/morning.jpg")
+        end
+      end
+    %p DayTimes::Morning context declaration
+  This class define the context
+  %tt DayTimes::Morning
+  and its adaptations.
+  %br
+  Keywords usage:
+  %ul
+    %li
+      %tt act_as_context:
+      Mark the class as context. This keyword define a context as name the class name.
+      It also allows to use the two following keyword in this class.
+    %li
+      %tt adaptations_for:
+      Until now to the next 
+      %tt adaptations_for
+      , all the following adaptations are defined
+      for class passed in parameter.
+    %li
+      %tt adapt:
+      Adapt the method with name passed in parameter for the defined by the previous 
+      %tt adaptation_for
+      in the context with name the class name.
+      
+  %h3 Context activation
+  .snippet
+    :coderay
+      #!ruby
+      class DayTimes::DayTimes
+        act_as_context :persistent
+        adaptations_for Phenomenal::Middleware
+        adapt :activation_handler do |env|
+          hour = Time.now.hour
+          if hour >= 6 && hour < 12
+            pnml_activate_context(DayTimes::Morning.name) 
+          elsif hour >= 12 && hour <18
+            pnml_activate_context(DayTimes::Afternoon.name) 
+          elsif hour >= 18 && hour < 23
+            pnml_activate_context(DayTimes::Evening.name) 
+          else
+             pnml_activate_context(DayTimes::Night.name) 
+          end
+          pnml_proceed(env)
+        end
+        pnml_activate_context(self.name)
+      end
+    %p DayTimes contexts activation
+  The 
+  %tt :persistent
+  parameter for
+  %tt act_as_context
+  mean that this context must always be active.
+  %br
+  To handle the activations of the context, we simply always adapt the 
+  %tt activation_handler(env)
+  method of the middleware. We have to put 
+  %tt pnml_proceed(env)
+  because all the contexts adapt this method to be activated.
+  %h3 Issues occurred
+  %h4 Classes caching
+  Rails applications have different running environments; production and development.
+  In the development one, at each refresh of the page, all the classes of the application are reloaded.
+  We had a problem because when a class is loaded, a context of its name is defined, as the framework is
+  not reloaded at each refresh, the context must not be redefined. So in the development environment, we force
+  the deactivation and forget all the contexts before any actions of the controller.
+  
+  %h4 Requests dispatching
+  The way in which rails handle is clients was also a problem. The rails server create a pool of processes
+  an each request can be handle by a different one. As each request of the same client is handle by a
+  random process, each one must be stateless. So, before all request all the contexts are deactivation
+  and they are activated if needed.
