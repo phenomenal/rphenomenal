@@ -1,7 +1,7 @@
 class Locations::Locations
   act_as_context :persistent
   
-  adaptations_for Phenomenal::Middleware
+  adaptations_for PhenomenalRails::Middleware
   
   adapt :activation_handler do |env|
     g = GeoIP.new("#{Rails.root}/app/assets/GeoIP.dat")

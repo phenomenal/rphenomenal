@@ -10,6 +10,7 @@ gem 'haml'
 gem 'will_paginate'
 gem 'sqlite3'
 gem 'phenomenal', :git => "git@git.phenomenal-gem.com:phenomenal.git"
+gem 'phenomenal-rails', :git => "git@git.phenomenal-gem.com:phenomenal-rails.git"
 gem 'fractals'
 gem 'geoip'
 gem 'haml-coderay'
