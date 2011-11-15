@@ -2,7 +2,7 @@
   %h1=@title
   
   %h2 Phenomenal
-  The framework use Ruby meta programming capabilities in order to adapt the behavior of the applications an add a 
+  The framework use Ruby meta programming facilities in order to adapt the behavior of the applications an add a 
   %acronym{:title=>"Domain specific language"}
     DSL
   \.
@@ -32,8 +32,8 @@
     
   %h4 Phenomenal::Declaration
   %p
-    This class define some method that are principally used to define context and 
-    add adaptions in rails application.
+    This module define some method that are used to define contexts and 
+    add adaptions in Rails application.
   %h4  Phenomenal::Adaptation
   %p  
     Models a particular adaptation for a method in a particular context
@@ -48,7 +48,7 @@
       #!ruby
       module Phenomenal::ConflictPolicies
         # Priority based policy
-        def age_conflict_policy(adaptation1, adaptation2)
+        def priority_conflict_policy(adaptation1, adaptation2)
           adaptation1.context.priority <=> adaptation2.context.priority
         end
       end
