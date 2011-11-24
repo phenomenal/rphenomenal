@@ -1,5 +1,4 @@
-class OperatingSystems::Ios
-  act_as_context
+context :Ios do
   
   adaptations_for PagesHelper
   

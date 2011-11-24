@@ -1,10 +1,9 @@
-class Browsers::Chrome
-  act_as_context
+context :Chrome do
   
   adaptations_for PagesHelper
   
   adapt :phenomenal_color do |r,g,b|
-      pnml_proceed(r+50,g+50,b-75)
+      proceed(r+50,g+50,b-75)
   end
     
   adapt :display_browser do 

@@ -1,21 +1,21 @@
-class OperatingSystems::OperatingSystems
-  act_as_context :persistent
+feature :OperatingSystems do
+
   
   adaptations_for PhenomenalRails::Middleware
   
   adapt :activation_handler do |env|
     user_agent = env["HTTP_USER_AGENT"]
     if user_agent[/(Android)/]
-      pnml_activate_context(OperatingSystems::Android.name) 
+      activate_context(:Android) 
     elsif user_agent[/(Linux)/]
-      pnml_activate_context(OperatingSystems::Linux.name) 
+      activate_context(:Linux) 
     elsif user_agent[/(Windows)/]
-      pnml_activate_context(OperatingSystems::Windows.name) 
+      activate_context(:Windows) 
     elsif user_agent[/(Mac)/]
-      pnml_activate_context(OperatingSystems::Macos.name)
+      activate_context(:Macos)
     end
-    pnml_proceed(env)
+    proceed(env)
   end
   
-  pnml_activate_context(self.name)
+  activate_context(:OperatingSystems)
 end

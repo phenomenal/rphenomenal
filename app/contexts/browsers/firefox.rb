@@ -1,10 +1,9 @@
-class Browsers::Firefox
-  act_as_context
+context :Firefox do 
   
   adaptations_for PagesHelper
   
   adapt :phenomenal_color do |r,g,b|
-    pnml_proceed(r+50,g,b-100)
+    proceed(r+50,g,b-100)
   end
     
   adapt :display_browser do 

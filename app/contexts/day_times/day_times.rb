@@ -1,18 +1,18 @@
-class DayTimes::DayTimes
-  act_as_context :persistent
+feature :DayTimes do
+  
   adaptations_for PhenomenalRails::Middleware
   adapt :activation_handler do |env|
     hour = Time.now.hour
     if hour >= 6 && hour < 12
-      pnml_activate_context(DayTimes::Morning.name) 
+      activate_context(:Morning) 
     elsif hour >= 12 && hour <18
-      pnml_activate_context(DayTimes::Afternoon.name) 
+      activate_context(:Afternoon) 
     elsif hour >= 18 && hour < 23
-      pnml_activate_context(DayTimes::Evening.name) 
+      activate_context(:Evening) 
     else
-       pnml_activate_context(DayTimes::Night.name) 
+       activate_context(:Night) 
     end
-    pnml_proceed(env)
+    proceed(env)
   end
-  pnml_activate_context(self.name)
+  activate_context(:DayTimes)
 end

@@ -1,6 +1,4 @@
-class OperatingSystems::Windows
-  act_as_context
-  
+context :Windows do
   adaptations_for PagesHelper
   
   adapt :display_os do 

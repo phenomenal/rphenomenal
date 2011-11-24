@@ -1,5 +1,4 @@
-class Locations::Belgium
-  act_as_context
+context :Belgium do
   
   adaptations_for PagesHelper
   

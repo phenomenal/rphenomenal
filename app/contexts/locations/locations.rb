@@ -1,5 +1,4 @@
-class Locations::Locations
-  act_as_context :persistent
+feature :Locations do
   
   adaptations_for PhenomenalRails::Middleware
   
@@ -7,12 +6,12 @@ class Locations::Locations
     g = GeoIP.new("#{Rails.root}/app/assets/GeoIP.dat")
     country = g.country env["REMOTE_ADDR"]
     if country.country_name=="Belgium"
-      pnml_activate_context(Locations::Belgium.name)
+      activate_context(:Belgium)
     else
-      pnml_activate_context(Locations::UnknownCountry.name)
+      activate_context(:UnknownCountry)
     end 
-    pnml_proceed(env)
+    proceed(env)
   end
   
-  pnml_activate_context(self.name)
+  activate_context(:Locations)
 end

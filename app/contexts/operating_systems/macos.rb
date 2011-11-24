@@ -1,5 +1,4 @@
-class OperatingSystems::Macos
-  act_as_context
+context :Macos do
   
   adaptations_for PagesHelper
   

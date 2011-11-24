@@ -1,21 +1,20 @@
-class Browsers::Browsers
-  act_as_context :persistent
+feature :Browsers do
   
   adaptations_for PhenomenalRails::Middleware
   
   adapt :activation_handler do |env|
     user_agent = env["HTTP_USER_AGENT"]
     if user_agent[/(Firefox)/]
-      pnml_activate_context("Browsers::Firefox") 
+      activate_context(:Firefox) 
     elsif user_agent[/(Chrome)/]
-      pnml_activate_context("Browsers::Chrome") 
+      activate_context(:Chrome) 
     elsif user_agent[/(Safari)/]
-      pnml_activate_context("Browsers::Safari")
+      activate_context(:Safari)
     elsif user_agent[/(MSIE)/]
-      pnml_activate_context("Browsers::InternetExplorer") 
+      activate_context(:InternetExplorer) 
     end
-    pnml_proceed(env)
+    proceed(env)
   end
   
-  pnml_activate_context(self.name)
+  activate_context(:Browsers)
 end
