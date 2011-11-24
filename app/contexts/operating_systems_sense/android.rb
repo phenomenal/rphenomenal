@@ -1,5 +1,4 @@
-class OperatingSystems::Android
-  act_as_context
+context :Android do
   
   adaptations_for PagesHelper
   

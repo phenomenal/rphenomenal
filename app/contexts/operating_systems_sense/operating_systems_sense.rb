@@ -1,4 +1,4 @@
-feature :OperatingSystems do
+feature :OperatingSystemsSense do
 
   
   adaptations_for PhenomenalRails::Middleware
@@ -17,5 +17,5 @@ feature :OperatingSystems do
     proceed(env)
   end
   
-  activate_context(:OperatingSystems)
+  activate_context(:OperatingSystemsSense)
 end

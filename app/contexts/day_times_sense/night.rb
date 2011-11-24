@@ -1,10 +1,8 @@
-class DayTimes::Night
-  act_as_context
-  
+context :Night do
   adaptations_for PagesHelper
   
   adapt :phenomenal_color do |r,g,b|
-    pnml_proceed(0,0,0)
+    proceed(0,0,0)
   end
     
   adapt :display_hour do 

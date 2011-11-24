@@ -1,4 +1,4 @@
-feature :DayTimes do
+feature :DayTimesSense do
   
   adaptations_for PhenomenalRails::Middleware
   adapt :activation_handler do |env|
@@ -14,5 +14,5 @@ feature :DayTimes do
     end
     proceed(env)
   end
-  activate_context(:DayTimes)
+  activate_context(:DayTimesSense)
 end

@@ -1,10 +1,9 @@
-class Browsers::InternetExplorer
-  act_as_context
+context :InternetExplorer do
   
   adaptations_for PagesHelper
   
   adapt :phenomenal_color do |r,g,b|
-    pnml_proceed(r,g,b+25)
+    proceed(r,g,b+25)
   end  
   
   adapt :display_browser do 

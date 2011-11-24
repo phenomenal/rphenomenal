@@ -1,5 +1,4 @@
-class OperatingSystems::Linux
-  act_as_context
+context :Linux do
   
   adaptations_for PagesHelper
   adapt :display_os do 

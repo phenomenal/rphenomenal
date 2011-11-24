@@ -1,11 +1,10 @@
-class Browsers::Safari
-  act_as_context
+context :Safari do
   
   adaptations_for PagesHelper
   
   adapt :phenomenal_color do |red,green,blue|
     k=100
-    pnml_proceed(red+75,green-10,blue-50)
+    proceed(red+75,green-10,blue-50)
   end
     
   adapt :display_browser do 

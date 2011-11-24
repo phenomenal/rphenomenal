@@ -1,4 +1,4 @@
-feature :Browsers do
+feature :BrowsersSense do
   
   adaptations_for PhenomenalRails::Middleware
   
@@ -16,5 +16,5 @@ feature :Browsers do
     proceed(env)
   end
   
-  activate_context(:Browsers)
+  activate_context(:BrowsersSense)
 end

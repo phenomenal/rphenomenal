@@ -1,4 +1,4 @@
-feature :Locations do
+feature :LocationsSense do
   
   adaptations_for PhenomenalRails::Middleware
   
@@ -13,5 +13,5 @@ feature :Locations do
     proceed(env)
   end
   
-  activate_context(:Locations)
+  activate_context(:LocationsSense)
 end

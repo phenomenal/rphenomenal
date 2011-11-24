@@ -1,5 +1,4 @@
-class Locations::UnknownCountry
-  act_as_context
+context :UnknownCountry do
   
   adaptations_for PagesHelper
   
