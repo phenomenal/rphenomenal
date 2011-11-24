@@ -22,21 +22,17 @@
     Models the management of contexts, it includes the Singleton module in order to ensure that only one instance exist at any time.
     Contexts will register themselves and notify their states update to it so that it can decide wich adapation deploy and wich is the next adaptation 
     in the case of a 
-    %tt pnml_proceed 
-    call
+    %tt phen_proceed 
+    call.
     
     
   %h4  Phenomenal::Context
   %p
     Models a first class context with the different adaptations, it's activation age,...
     
-  %h4 Phenomenal::Declaration
-  %p
-    This module define some method that are used to define contexts and 
-    add adaptions in Rails application.
   %h4  Phenomenal::Adaptation
   %p  
-    Models a particular adaptation for a method in a particular context
+    Models a particular adaptation for a method in a particular context.
     
   %h4 Phenomenal::ConflictPolicies
   %p
@@ -57,7 +53,7 @@
   %h4  Phenomenal::DSL
   %p
     Define the DSL for the framework.
-    This is only syntactic sugar to simplify developpers life.
+    This is only syntactic sugar to simplify developers life.
   
   %h4  Phenomenal::Logger
   %p
@@ -65,7 +61,7 @@
   
   %h4 Phenomenal::Error
   %p
-    Models an exception for context errors
+    Models an exception for context errors.
   %h4  Proc
   %p
     The two methods are added to the 
@@ -87,7 +83,7 @@
     %strong Context declaration
     ) and the file
     'day_time' define the rules when the contexts in the directory are activated (See
-    %strong Context activation
+    %strong Feature declaration
     ).
     %br
     In this example, we define four groups of contexts related to:
@@ -100,11 +96,9 @@
         %li 
           Locations: Belgium, Unknown Country
         %li 
-          Day times: Android, Ios, Linux, Macos, Windows
+          Operating systems: Android, Ios, Linux, Macos, Windows
+
     %h4 Initialization
-    The ‘phenomenal_initializer.rb’ is the file that contains all the directives needed for the framework initialization.
-    By default, we simply define the default conflict policy.
-    %h4 Loading
     The framework needs also to be loaded at the loading of the rails application.
     We add the file ‘contexts.rb’ in the initializers of rails.
     At this step, we also load all the contexts present in the ‘contexts’ directory and its sub-directories.
@@ -115,6 +109,7 @@
     details in the 
     %strong Issues occurred
     section.
+    
     %h4 Middleware
     Finally, we add a 'middleware.rb' file in the lib directory in order to handle the context activation before
     calling the controller. In this class, we define the method
