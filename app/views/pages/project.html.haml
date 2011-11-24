@@ -122,74 +122,70 @@
   .snippet
     :coderay
       #!ruby
-      class DayTimes::Morning
-        act_as_context
+      context :Firefox do 
         adaptations_for PagesHelper
         adapt :phenomenal_color do |r,g,b|
-          k = 1.40
-          pnml_proceed((r*k).to_i,(g*k).to_i,(b*k).to_i)
+          proceed(r+50,g,b-100)
         end
-        adapt :display_hour do 
-          asset_path("contexts/day_times/morning.jpg")
+        adapt :display_browser do 
+          image_tag("contexts/browsers/firefox.png")
+        end
+        adapt :display_phenomenal_use_diagram do
+          image_tag("project/phenomenal_use_diagram.svg")
         end
       end
-    %p DayTimes::Morning context declaration
+    %p Firefox context declaration
   This class define the context
-  %tt DayTimes::Morning
+  %tt Firefox
   and its adaptations.
   %br
   Keywords usage:
   %ul
     %li
-      %tt act_as_context:
-      Mark the class as context. This keyword define a context as name the class name.
-      It also allows to use the two following keyword in this class.
+      %tt context:
+      Define the context 
+      %tt Firefox
+      \. Like the classes in Ruby the contexts are open, so you can add adaptations at any point in your software.
     %li
       %tt adaptations_for:
       Until now to the next 
       %tt adaptations_for
       , all the following adaptations are defined
-      for class passed in parameter.
+      for the class passed in parameter.
     %li
       %tt adapt:
-      Adapt the method with name passed in parameter for the defined by the previous 
+      Adapt the method with name passed in parameter for the class defined by the previous 
       %tt adaptation_for
-      in the context with name the class name.
+      \. 
       
-  %h3 Context activation
+  %h3 Feature declaration
   .snippet
     :coderay
       #!ruby
-      class DayTimes::DayTimes
-        act_as_context :persistent
-        adaptations_for Phenomenal::Middleware
+      feature :BrowsersSense do
+        adaptations_for PhenomenalRails::Middleware
         adapt :activation_handler do |env|
-          hour = Time.now.hour
-          if hour >= 6 && hour < 12
-            pnml_activate_context(DayTimes::Morning.name) 
-          elsif hour >= 12 && hour <18
-            pnml_activate_context(DayTimes::Afternoon.name) 
-          elsif hour >= 18 && hour < 23
-            pnml_activate_context(DayTimes::Evening.name) 
-          else
-             pnml_activate_context(DayTimes::Night.name) 
+          user_agent = env["HTTP_USER_AGENT"]
+          if user_agent[/(Firefox)/]
+            activate_context(:Firefox) 
+          elsif user_agent[/(Chrome)/]
+            activate_context(:Chrome) 
+          elsif user_agent[/(Safari)/]
+            activate_context(:Safari)
+          elsif user_agent[/(MSIE)/]
+            activate_context(:InternetExplorer) 
           end
-          pnml_proceed(env)
+          proceed(env)
         end
-        pnml_activate_context(self.name)
+        activate_context(:BrowsersSense)
       end
-    %p DayTimes contexts activation
-  The 
-  %tt :persistent
-  parameter for
-  %tt act_as_context
-  mean that this context must always be active.
-  %br
-  To handle the activations of the context, we simply always adapt the 
-  %tt activation_handler(env)
-  method of the middleware. We have to put 
-  %tt pnml_proceed(env)
-  because all the contexts adapt this method to be activated.
+    %p BrowserSense feature declaration
+  %p
+    To handle the activations of the contexts, we simply always adapt the 
+    %tt activation_handler(env)
+    method of the middleware. We have to use 
+    %tt proceed(env)
+    because all the features adapts this method to be activated.
   %h3 Issues occurred
   %h4 Classes caching
   Rails applications have different running environments; production and development.
