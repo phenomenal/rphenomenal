@@ -1,5 +1,5 @@
 feature :LocationsSense do
-  
+  is_persistent
   adaptations_for PhenomenalRails::Middleware
   
   adapt :activation_handler do |env|
