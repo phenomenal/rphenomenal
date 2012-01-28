@@ -11,7 +11,17 @@
     = javascript_include_tag "application"
     = csrf_meta_tag
     = yield :head
-    %meta(name="google-site-verification" content="RRfR1jRuxUMF6eMB5r3Y2U7ErB2uBopOrYoTY9C_WJ8")
+    -if Rails.env.production? 
+      <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-28736734-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+      </script>
   %body
     .container
       = render "layouts/header"
@@ -25,3 +35,4 @@
           .clear
         = render 'layouts/footer'
       = debug(params) if Rails.env.development? 
+      
