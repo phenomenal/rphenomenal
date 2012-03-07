@@ -2,15 +2,12 @@ source 'http://rubygems.org'
 
 gem 'rails'
 
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
 gem 'mysql2'
 gem 'haml'
 gem 'will_paginate'
 gem 'sqlite3'
-gem 'phenomenal', :git => "git@git.phenomenal-gem.com:phenomenal.git"
-gem 'phenomenal-rails', :git => "git@git.phenomenal-gem.com:phenomenal-rails.git"
+gem 'phenomenal', :git => 'git@github.com:phenomenal/phenomenal.git'
+gem 'phenomenal_rails', :git => 'git@github.com:phenomenal/phenomenal_rails.git'
 gem 'fractals'
 gem 'geoip'
 gem 'haml-coderay'

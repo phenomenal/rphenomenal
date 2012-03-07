@@ -12,6 +12,4 @@ feature :LocationsSense do
     end 
     proceed(env)
   end
-  
-  activate_context(:LocationsSense)
 end

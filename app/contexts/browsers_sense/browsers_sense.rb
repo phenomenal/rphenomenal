@@ -15,6 +15,4 @@ feature :BrowsersSense do
     end
     proceed(env)
   end
-  
-  activate_context(:BrowsersSense)
 end

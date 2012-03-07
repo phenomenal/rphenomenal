@@ -21,6 +21,7 @@ class PagesController < ApplicationController
   end
   
   def context
+    phen_graphical_view("#{Rails.root}/public/your_context.png")
     @title="Defined contexts"
   end
 end

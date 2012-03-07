@@ -14,5 +14,4 @@ feature :DayTimesSense do
     end
     proceed(env)
   end
-  activate_context(:DayTimesSense)
 end
