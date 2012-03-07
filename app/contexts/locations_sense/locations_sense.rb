@@ -2,7 +2,7 @@ feature :LocationsSense do
   is_persistent
   adaptations_for PhenomenalRails::Middleware
   
-  adapt :activation_handler do |env|
+  adapt_class :activation_handler do |env|
     g = GeoIP.new("#{Rails.root}/app/assets/GeoIP.dat")
     country = g.country env["REMOTE_ADDR"]
     if country.country_name=="Belgium"

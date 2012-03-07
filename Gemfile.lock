@@ -6,7 +6,7 @@ GIT
 
 GIT
   remote: git@github.com:phenomenal/phenomenal_rails.git
-  revision: 1518f00ddc22935ff32131ae9bb3f4f64f501c93
+  revision: 2f2891e54399f731aa7a96fdceb9de5baba50c2f
   specs:
     phenomenal_rails (1.0.0)
       phenomenal (>= 1.0.1)

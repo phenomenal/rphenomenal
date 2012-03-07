@@ -1,7 +1,7 @@
 feature :DayTimesSense do
   is_persistent
   adaptations_for PhenomenalRails::Middleware
-  adapt :activation_handler do |env|
+  adapt_class :activation_handler do |env|
     hour = Time.now.hour
     if hour >= 6 && hour < 12
       activate_context(:Morning) 

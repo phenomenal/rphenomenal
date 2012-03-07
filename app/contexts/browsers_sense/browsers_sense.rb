@@ -2,7 +2,7 @@ feature :BrowsersSense do
   is_persistent
   
   adaptations_for PhenomenalRails::Middleware
-  adapt :activation_handler do |env|
+  adapt_class :activation_handler do |env|
     user_agent = env["HTTP_USER_AGENT"]
     if user_agent[/(Firefox)/]
       activate_context(:Firefox) 
