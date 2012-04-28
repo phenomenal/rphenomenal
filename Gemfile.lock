@@ -140,6 +140,7 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.8.0)
+    ruby-graphviz (1.0.5)
     sass (3.1.15)
     sass-rails (3.1.5)
       actionpack (~> 3.1.0)
@@ -190,6 +191,7 @@ DEPENDENCIES
   phenomenal_rails!
   rails
   rspec-rails
+  ruby-graphviz
   sass-rails (~> 3.1.0)
   sqlite3
   therubyracer
