@@ -1,22 +1,16 @@
 %tr
-  %td.context_table_name_cell
+  %td
     = context.to_s
-  %td.context_table_state_cell
+  %td
+    = context.class
+  %td
     -if context.active?
       =image_tag "icons/active_context.png"
     -else 
       =image_tag "icons/inactive_context.png"
   %td
-    %div.adaptations
-      %span.context_adaptations_button
-        =image_tag "icons/show_adaptations.png"
-      .context_adaptations_table
-        %table
-          %thead
-            %th Class
-            %th Method
-          %tbody
-            -context.adaptations.each do |a|
-              %tr
-                %td=a.klass
-                %td=a.method_name
+    = context.activation_age
+  %td
+    -context.adaptations.each do |a|
+      =render "shared/context_adaptation", :adaptation=>a
+      %br

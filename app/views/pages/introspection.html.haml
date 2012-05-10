@@ -1,0 +1,17 @@
+.row-fluid
+  .span12
+    %h2 System's features and contexts
+    %table{:class=>"table table-striped"}
+      %thead
+        %th Name
+        %th Type
+        %th State
+        %th Activation age
+        %th Adaptations
+      %tbody
+        -phen_defined_contexts.each do |c|
+          =render "shared/context", :context=>c
+.row-fluid
+  .span12
+    %h2 Code
+    =render "shared/keep_calm"
