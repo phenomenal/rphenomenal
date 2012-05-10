@@ -2,7 +2,6 @@ feature :DayTimesSense do
   context :Afternoon do
     
     adaptations_for PagesHelper
-    
     adapt :phenomenal_color do |r,g,b|
       proceed(r,g,b)
     end

@@ -1,7 +1,7 @@
 feature :DayTimesSense do
   context :Night do
-    adaptations_for PagesHelper
     
+    adaptations_for PagesHelper
     adapt :phenomenal_color do |r,g,b|
       proceed(0,0,0)
     end

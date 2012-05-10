@@ -1,11 +1,6 @@
 feature :OperatingSystemsSense do
   context :Ios do
     
-    adaptations_for PagesHelper
-    adapt :display_os do 
-      image_tag("contexts/operating_systems/ios.png","data-caption"=>"Your OS is iOS")
-    end
-    
     # In combination with the analyser feature
     feature :Analyser do
       adaptations_for PagesHelper

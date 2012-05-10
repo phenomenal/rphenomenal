@@ -2,7 +2,6 @@ feature :BrowsersSense do
   context :InternetExplorer do
     
     adaptations_for PagesHelper
-    
     adapt :phenomenal_color do |r,g,b|
       proceed(r,g,b+25)
     end  

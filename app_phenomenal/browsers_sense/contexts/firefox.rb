@@ -2,7 +2,6 @@ feature :BrowsersSense do
   context :Firefox do 
     
     adaptations_for PagesHelper
-    
     adapt :phenomenal_color do |r,g,b|
       proceed(r+50,g,b-100)
     end

@@ -1,8 +1,7 @@
 feature :BrowsersSense do
   context :Safari do
     
-    adaptations_for PagesHelper
-    
+    adaptations_for PagesHelper  
     adapt :phenomenal_color do |red,green,blue|
       k=100
       proceed(red+75,green-10,blue-50)
