@@ -6,6 +6,7 @@
     %span{:id=>"left-init-key"}
     =image_tag("pheno_logo.png")
     %h3 Thibault Poncelet & Loïc Vigneron
+    %h4 June 2012
 
 .slide#table-of-contents
   %header
@@ -17,16 +18,14 @@
 .slide.transitionSlide#introduction
   %section.middle
     %h2 Introduction
-    %p Setting the scene
-
+    %p
 .slide
   %header
     %h1 Introduction
-    %h2 Setting the scene
   %section.middle
     %p
       %strong From
-      insulated desktop
+      isolated desktop
       %strong to
       multi-plateform, multi-user, customizable applications
     .big-arrow
@@ -66,7 +65,7 @@
         %li Solve the problem by merging COP and FOP paradigms
         %li Use Ruby, a real-world language
         %li Integrate the solution in Ruby on Rails applications
-        %li Provide an industrial ready solution
+        %li Provide an industrial ready and validated solution
 
 // ======== Approach ========
 .slide.transitionSlide#approach
@@ -110,7 +109,7 @@
       %li Features through Context as a Feature
       %li Behavioral adaptations
       %li Relationships
-      %li Visualizer tool
+      %li Visualization tool
       %li Lightweight Domain Specific Language
 
 .slide
@@ -122,7 +121,7 @@
       %h3 Code
       =pygments("public/presentation_code/define_context.rb")
     .code_graphical_view
-      %h3 Context Visualizer
+      %h3 Context Visualization
       =image_tag("/presentation_code/graphical_views/define_context.rb.png")
     .clear
     %ul.bullets
@@ -132,7 +131,7 @@
 .slide
   %header
     %h1 Approach
-    %h2 Define adaptations
+    %h2 Phenomenal: Define adaptations
   %section
     .code_snippet
       %h3 Code
@@ -145,13 +144,13 @@
 .slide
   %header
     %h1 Approach
-    %h2 Define combined contexts
+    %h2 Phenomenal: Define combined contexts
   %section
     .code_snippet.left{:style=>"width:250px;"}
       %h3 Code
       =pygments("public/presentation_code/define_combined_context.rb")
     .code_graphical_view
-      %h3 Context Visualizer
+      %h3 Context Visualization
       =image_tag("/presentation_code/graphical_views/define_combined_context.rb.png",:width=>"560px")
     .clear
     %ul.bullets
@@ -167,7 +166,7 @@
       %h3 Code
       =pygments("public/presentation_code/define_relationship.rb")
     .code_graphical_view
-      %h3 Context Visualizer
+      %h3 Context Visualization
       =image_tag("/presentation_code/images/defineRelationship.svg",:width=>"315px")
     .clear
     %ul.bullets
@@ -210,9 +209,11 @@
     %h1 Approach
     %h2 Phenomenal Rails: Activation Condition
   %section
-    .code_snippet
-      %h3 Code
+    .left.code_snippet
       =pygments("public/presentation_code/activation_condition.rb")
+    .right
+      =image_tag("/presentation_code/images/application_stack.svg",:width=>"350x")
+    .clear
     %ul.bullets
       %li Contexts have to be activated per request (user change at each request)
       %li
@@ -250,21 +251,47 @@
         To adapt a view a context must define a file with the same name and views folder
       %li The file displayed is the one in active contexts with higher precedence
 
+// ======== Validation ========
+.slide.transitionSlide#validation
+  %section.middle
+    %h2 Validation
+    %p
+    
 .slide
   %header
-    %h1 Approach
+    %h1 Validation
+    %h2 Benubo
+  %section.middle
+    %p
+      =image_tag("/presentation_code/images/benubo.png")
+      %br
+      SaaS ERP to manage SME activities developed by Belighted
+    %ul.bullets
+      %li Validates our concepts
+      %li Leads to improvements of our solution
+      %li Provides industrial feedback  
+.slide
+  %header
+    %h1 Validation
     %h2 Feature as a Service
   %section.middle
     %p
-      The developement of the previous concepts and their application in Benubo leaded to the notion of
+      The development of the previous concepts and their application in Benubo leaded to the notion of
       %strong Feature as a Service
     %ul.bullets
       %li FaaS pushes the idea of Software as a Service further
       %li Allows to sell sub-components of an application to users
       %li Doable very easily with the Phenomenal Rails Gem
     %p=link_to "Example", :root
-
-
+          
+.slide
+  %header
+    %h1 Validation
+    %h2 Benchmarks
+  %section.middle  
+    %p
+      =image_tag("/presentation_code/images/benchmark.svg")
+    
 // ======== Contributions ========
 .slide.transitionSlide#contributions
   %section.middle
@@ -283,7 +310,7 @@
     %h2 Implementation
     %ul.bullets
       %li Phenomenal & Phenomenal Rails Gems
-      %li Visualiser tool
+      %li Visualization tool
       %li Activation condition
       %li Validation case-study (Benubo)
       %li Lightweight Domain Specific Language
