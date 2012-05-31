@@ -1,19 +1,20 @@
 .row-fluid#header{:style=>"background-color:#{phenomenal_color(127,127,127)}"}
-  .span6
-    #header_logo
-      =link_to image_tag("pheno_logo.png"), :root
-  .span6
-    %ul#menu.nav.nav-pills
-      %li= link_to "Home", root_path, {:class=>"active big_link"}
-      %li.dropdown
-        =link_to "Project","#",{:class=>"dropdown-toggle big_link", "data-toggle"=>"dropdown"}
-        %ul.dropdown-menu
-          %li=link_to "Phenomenal", "#"
-          %li=link_to "Phenomenal Rails", "#"
-      %li.dropdown
-        =link_to "Documentation","#",{:class=>"dropdown-toggle big_link", "data-toggle"=>"dropdown"}
-        %ul.dropdown-menu
-          %li=link_to "How to use the gem?", "#"
-          %li=link_to "How to refactor your app?", "#"
-          %li=link_to "API", "#"
-      %li=link_to "Introspection",introspection_path, {:class=>"active big_link"}
+  .container
+    .span6
+      #header_logo
+        =link_to image_tag("pheno_logo.png"), :root
+    .span6
+      %ul#menu.nav.nav-pills
+        %li= link_to "Home", root_path, {:class=>"active big_link"}
+        %li.dropdown
+          =link_to "Project","#",{:class=>"dropdown-toggle big_link", "data-toggle"=>"dropdown"}
+          %ul.dropdown-menu
+            %li=link_to "Phenomenal", "#"
+            %li=link_to "Phenomenal Rails", "#"
+        %li.dropdown
+          =link_to "Documentation","#",{:class=>"dropdown-toggle big_link", "data-toggle"=>"dropdown"}
+          %ul.dropdown-menu
+            %li=link_to "How to use the gem?", "#"
+            %li=link_to "How to refactor your app?", "#"
+            %li=link_to "API", "#"
+        %li=link_to "Introspection",introspection_path, {:class=>"active big_link"}

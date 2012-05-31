@@ -15,6 +15,7 @@ gem 'ruby-graphviz'
 gem 'jquery-rails'
 gem 'bootstrap-sass-rails'
 gem 'bootstrap_forms'
+gem 'twitter'
 
 group :assets do
   gem 'sass-rails'

@@ -21,52 +21,50 @@
     .row-fluid
       .span4
         #rubygems.social.well
-          .social_logo
-            =image_tag "socials/RubyGems-48.png"
-          .social_content
-            %strong gem install phenomenal
-            %br
-            %strong gem install phenomenal_rails
+          =link_to "http://rubygems.org/profiles/phenomenal" do
+            .social_logo
+              =image_tag "socials/RubyGems-48.png"
+            .social_content
+              %strong gem install phenomenal
+              %br
+              %strong gem install phenomenal_rails
           .clear
       .span4
         #github.social.well
-          .social_logo
-            =image_tag "socials/Github-48.png"
-          .social_content
-            %strong=link_to "Phenomenal Gem","https://github.com/phenomenal"
+          =link_to "https://github.com/phenomenal" do
+            .social_logo
+              =image_tag "socials/Github-48.png"
+            .social_content
+              %strong Phenomenal Gem
           .clear
       .span4
         #twitter.social.well
-          .social_logo
-            =image_tag "socials/Twitter-48.png"
-          .social_content
-            %strong @phenomenal
+          =link_to "https://twitter.com/#!/phenomenal_cop" do
+            .social_logo
+              =image_tag "socials/Twitter-48.png"
+            .social_content
+              %strong @phenomenal
           .clear
 .row-fluid
   .span12      
-    %h2 Damn what's Phenomenal gem?
+    %h2 Damn what's Phenomenal Gem?
     .well
       %p
-        The project was started in the context of our master thesis at 
-        %acronym{:title=>"Université Catholique de Louvain"} UCL 
-        and we hope that it will still alive after this.
-        Our goals in not only to implement a
-        %acronym{:title=>"Context Oriented Programming"} COP
-        framework but also to provide graceful integration in ruby on rails application to proof that
-        %acronym{:title=>"Context Oriented Programming"} COP
-        leads to better and lighter code.
-      %p
-        In that way, we will also provide some refactoring to bring non-context oriented applications to context-oriented applications.
-        The next phase of the project is to work side by side with Belighted (A society specialized in
-        %acronym{:title=>"Ruby on Rails"} ROR
-        application) to apply and validate our considerations in one of their application.
-      %p
-        So, our work is first to develop the framework 
-        %tt phenomenal 
-        gem that allow
-        %acronym{:title=>"Context Oriented Programming"} COP
-        in Ruby application and then
-        %tt phenomenal-rails 
-        that will embed the glue for the
-        %acronym{:title=>"Ruby on Rails"} ROR
-        web framework.
+      This thesis introduces the Phenomenal Gem, a 
+      %acronym{:title=>"Context-Oriented Programming"} COP
+      framework for the dynamic programming language Ruby. With this framework, programmers can handle contexts as first-class entities allowing them to adapt the behaviour of their applications dynamically in a clean and structured manner. In addition to this 
+      %acronym{:title=>"Context-Oriented Programming"} COP 
+      framework, the thesis also introduces the notion of 
+      %acronym{:title=>"Context as a Feature"} CaaF 
+      that tries to merge the best of 
+      %acronym{:title=>"Context-Oriented Programming"} COP
+      and 
+      %acronym{:title=>"Feature-Oriented Programming"} FOP 
+      into a single new paradigm. From the point of view of usability in today’s web application, this thesis builds the notion of 
+      %acronym{:title=>"Feature as a Service"} FaaS 
+      on top of 
+      %acronym{:title=>"Context as a Feature"} CaaF
+      , and integrates it in the Ruby on Rails web framework. The implementation and semantics of these concepts are presented in detail and validated by a real-world case study of a 
+      %acronym{:title=>"Software as a Service"} SaaS
+      %acronym{:title=>"Enterprise Resource Planning"} ERP 
+      application, developed by an industrial collaborator.

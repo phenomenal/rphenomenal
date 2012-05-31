@@ -19,9 +19,11 @@ SOCIAL
 NEWS
 */
 .news_date {
-  float:left;
   font-weight:bold;
-  margin-right:10px;
+  text-align:center;
+  img {
+   width:32px;
+  }
 }
 
 /*

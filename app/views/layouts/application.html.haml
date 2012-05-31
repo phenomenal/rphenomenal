@@ -5,9 +5,6 @@
     %title= title
     = favicon_link_tag('/favicon.png')
     = stylesheet_link_tag    "application"
-    <!--[if lt IE 8]>
-    = stylesheet_link_tag 'blueprint/ie'
-    <![endif]-->
     = javascript_include_tag "application"
     = csrf_meta_tag
     = yield :head
@@ -23,14 +20,14 @@
       })();
       </script>
   %body
+    = render "layouts/header"
     .container
-      = render "layouts/header"
       #body
         - [:notice, :error, :message, :success].each do |key|
           - unless flash[key].blank?
             %div{ :class => "flash #{key}" }= flash[key] 
         = yield
         .clear
-      = render 'layouts/footer'
+    = render 'layouts/footer'
     = debug(params) if Rails.env.development? 
       

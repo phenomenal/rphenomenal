@@ -1,10 +1,12 @@
-.news_date
-  15/06/2010
-.news_content
-  Nice news...
-.clear
-.news_date
-  22/06/2010
-.news_content
-  Second Nice news...
-.clear
+-Twitter.user_timeline("phenomenal_cop")[0..5].each do |post|
+  .row
+    .span4
+      .news_date
+        =image_tag "socials/Twitter-48.png"
+        =post.created_at.strftime("%-d %B %y at %l:%M %p")
+    .span8
+      .news_content
+        =post.text
+
+
+
