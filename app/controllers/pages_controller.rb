@@ -6,12 +6,12 @@ class PagesController < ApplicationController
   end
   
   def project
-    @title="Project"
+    @title="Project Description"
     #TODO
   end
   
-  def documentation
-    @title="Documentation"
+  def api
+    @title="Application Programming Interface"
     #TODO
   end
   
