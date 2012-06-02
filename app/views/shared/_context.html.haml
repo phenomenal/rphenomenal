@@ -9,7 +9,7 @@
     -else 
       =image_tag "icons/inactive_context.png"
   %td
-    = context.activation_age
+    = context.activation_count
   %td
     -context.adaptations.each do |a|
       =render "shared/context_adaptation", :adaptation=>a
