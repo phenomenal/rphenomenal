@@ -1,18 +1,28 @@
-#simple_description {
-  width:100%;
-  text-align:center;
-  font-size:1.2em;
-  font-style:italic;
+/*
+SOCIAL
+*/
+#socials {
+  margin-top:20px;
+  margin-bottom:20px;
 }
-#use_diagram {
+.social {
+  text-align:center;
+  height:70px;
+}
+/*
+NEWS
+*/
+.news_date {
+  font-weight:bold;
+  text-align:center;
   img {
-    width:800px;
+   width:32px;
   }
 }
-#rails_tree{
-  img{
-    float:left;
- 	}
+
+/*
+CUSTOMIZE
+*/
+#customize_form .actions {
+  text-align:center;
 }
-
-

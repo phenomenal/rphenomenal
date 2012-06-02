@@ -1,0 +1,30 @@
+.documentation{
+  h1 {
+    counter-reset:section;
+  }
+  h2 {
+    counter-reset:subsection;
+    
+    &:before {
+      counter-increment:section;
+      content:"" counter(section) ". ";
+    }
+  }
+  h3 {
+    counter-reset:subsubsection;
+
+    &:before {
+      counter-increment:subsection;
+      content:counter(section) "." counter(subsection) " ";
+    }
+  }
+  h4 {
+    /*&:before {
+      counter-increment:subsubsection;
+      content:counter(section) "." counter(subsection) "." counter(subsubsection) " ";
+    }*/
+  }
+}
+acronym {
+  cursor:help;
+}

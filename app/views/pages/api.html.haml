@@ -1,0 +1,171 @@
+.documentation
+  %h1=@title
+  %h2 Phenomenal Gem
+  %h3 Context Management
+  
+  %h4 
+    phen_context(context[,contexts...],&block) → context
+    %br
+    context(context[,contexts...],&block) → context
+  %p
+    Defines a new (combined) context.
+    
+  %h4 
+    phen_feature(context[,contexts...],&block) → feature
+    %br
+    feature(context[,contexts...],&block) → feature
+  %p
+    Defines a new (combined) feature.
+    
+  %h4 
+    adaptations_for(klass) → klass
+  %p
+    Must be called in the body of a context or feature, defines the class for which the
+    following adaptation defined with 
+    %tt adapt 
+    and 
+    %tt adapt 
+    class belong.
+    
+  %h4
+    adapt(method,&block) → nil
+  %p
+    Must be called in the body of a context or feature, defines an adaptation for the instance method in the class specified by the previous call to 
+    %tt adaptations_for.
+    
+  %h4
+    adapt_class(method,&block) → nil
+  %p
+    Must be called in the body of a context or feature, defines an adaptation for the class method in the class specified by the previous call to 
+    %tt adaptations_for.
+    
+  %h4
+    phen_forget_context(context) → nil
+  %p
+    Removes a context from the system.
+    
+  %h4
+    phen_activate_context(context[,contexts...]) → context or feature 
+    %br
+    activate_context(context[,contexts...]) → context or feature
+  %p
+    Activates the context or feature.
+    
+  %h4
+    phen_deactivate_context(context[,contexts...]) → context or feature 
+    %br
+    deactivate_context(context[,contexts...]) → context or feature
+  %p
+    Deactivates the context or feature.
+    
+  %h4
+    phen_context_active?(context) → true or false
+  %p
+    Returns true when the context is currently active.
+    
+  %h4
+    phen_context_information(context) → hash
+  %p
+    Returns details about the context:
+    %ul
+      %li name: the name of the context.
+      %li adaptations: an array of the context adaptations.
+      %li active: true if the context is active, false otherwise.
+      %li age: the activation age of the context.
+      %li activation count: the number of activations of the context since the last actual deactivation.
+      %li type: either Phenomenal::Context or Phenomenal::Feature.
+  %h4
+    phen_default_feature → feature
+  %p
+    Returns the default feature of the system. This feature represents the base application.
+  %h4
+    phen_defined_contexts → array  
+  %p
+    Returns an array containing all the contexts and features defined in the system.
+    
+  %h3 Adaptations Management
+  %h4
+    phen_add_adaptation(context,klass, method_name, &body) → adaptation
+  %p
+    Creates and returns a new adaptation for the instance method in klass into context.
+  %h4
+    phen_add_class_adaptation(context,klass, method_name, &body) → adaptation
+  %p
+    Creates and returns a new adaptation for the class method in klass into context.
+    
+  %h4
+    phen_remove_adaptation(context,klass, method name) → adaptation
+  %p  
+    Deletes and returns the adaptation for the instance method in klass from context.
+  %h4
+    phen_remove_class_adaptation(context,klass, method name) → adaptation 
+  %p
+    Deletes and returns the adaptation for the class method in klass from context.
+  %h4
+    phen_proceed([args...],&block) → object
+    %br
+    proceed([args...],&block) → object
+  %p  
+    Must be called into the body of an adaptation, returns the evaluation of the next method with less precedence according to the conflict policy. The arguments are passed to this next method.
+  %h4
+    phen_change_conflict_policy(&block) → nil
+  %p
+    Sets a new conflict policy for the system. The block takes two contexts in argument and has to return -1 if first context has precedence on the second, 1 in the opposite case and raise a Phenomenal::Error if the conflict is not resolvable.
+    
+  %h3 Relationships Management
+  %h4  
+    phen_requirements_for(source,:on=>[targets]) → nil
+    %br
+    requirements_for(source,:on=>[targets]) → nil
+  %p
+    Define a requirement relationship for source on targets. When called in the body of a feature, this relationship is stored into it. Otherwise, stored in the default feature.
+  %h4  
+    phen_implications_for(source,:on=>[targets]) → nil
+    %br
+    implications_for(source,:on=>[targets]) → nil
+  %p
+    Define a implication relationship for source on targets. When called in the body of a feature, this relationship is stored into it. Otherwise, stored in the default feature.
+  %h4  
+    phen_suggestions_for(source,:on=>[targets]) → nil 
+    %br
+    suggestions_for(source,:on=>[targets]) → nil
+  %p
+    Define a suggestion relationship for source on targets. When called in the body of a feature, this relationship is stored into it. Otherwise, stored in the default feature.
+  
+  %h4  
+    requires(context,[contexts,..]) → nil
+  %p
+    Must be called in the body of a context, defines a requirement relationship in its closest parent feature on the contexts in parameters.
+
+  %h4
+    implies(context,[contexts,..]) → nil
+  %p  
+    Must be called in the body of a context, defines a implication relationship in its closest parent feature on the contexts in parameters.
+
+  %h4  
+    suggests(context,[contexts,..]) → nil
+  %p
+    Must be called in the body of a context, defines a suggestion relationship in its closest parent feature on the contexts in parameters.
+
+  %h3 Debugging
+
+  %h4
+    phen_textual_view → string
+  %p  
+    Returns a textual representation of the current state of the system.
+  %h4  
+    phen_graphical_view(file) → nil
+  %p  
+    Generates a graphical representation of the current state of the system.
+    
+  %h2 Phenomenal Rails Gem
+  %h4
+    is_persistent → context
+  %p  
+    Must be called in a feature or context, states that the contexts is always active in the system.
+  %h4  
+    activation_condition(&block) → nil
+  %p  
+    Must be called in a feature, specifies the logic to activate contexts before each HyperText Transfer Protocol (HTTP) request. The block defining logic has access to the Rack environment through the parameter env. This activation condition is only applied when the surrounding feature is active.    
+
+  

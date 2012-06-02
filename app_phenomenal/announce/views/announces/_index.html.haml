@@ -1,0 +1,12 @@
+-Twitter.user_timeline("phenomenal_cop")[0..5].each do |post|
+  .row
+    .span4
+      .news_date
+        =image_tag "socials/Twitter-48.png"
+        =post.created_at.strftime("%-d %B %y at %l:%M %p")
+    .span8
+      .news_content
+        =post.text
+
+
+
