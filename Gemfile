@@ -28,7 +28,6 @@ end
 
 group :development do
   gem 'rspec-rails'
-  gem 'annotate-models'
   gem 'sqlite3'
 end
 

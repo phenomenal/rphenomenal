@@ -46,7 +46,6 @@ GEM
     activesupport (3.2.5)
       i18n (~> 0.6)
       multi_json (~> 1.0)
-    annotate-models (1.0.4)
     arel (3.0.2)
     bootstrap-sass-rails (2.0.3.0)
       rails (~> 3.1)
@@ -186,7 +185,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  annotate-models
   bootstrap-sass-rails
   bootstrap_forms
   coffee-rails
