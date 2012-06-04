@@ -12,9 +12,9 @@ SOCIAL
 /*
 NEWS
 */
-a.test {
-  color: #000000; 
-  border: 1px solid red;
+a.news, a.news:hover {
+  color: #000000;
+  text-decoration:none;
 }
 .news_date {
   font-weight:bold;

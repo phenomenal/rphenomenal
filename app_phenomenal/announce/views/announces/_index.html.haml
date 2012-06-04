@@ -1,15 +1,14 @@
 -cache("tweets", :expires_in => 42.minutes) do
   -post = Twitter.user_timeline("phenomenal_cop").first
-  
-  .row
-    .span4
-      .news_date
-        =link_to "https://twitter.com/#!/phenomenal_cop", :class=>"test" do
+  =link_to "https://twitter.com/#!/phenomenal_cop", :class=>"news" do
+    .row
+      .span4
+        .news_date
           =image_tag "socials/Twitter-48.png"
           =post.created_at.strftime("%-d %B %y at %l:%M %p")
-    .span8
-      .news_content
-        =post.text
+      .span8
+        .news_content
+          =post.text
 
 
 
