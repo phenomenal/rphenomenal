@@ -1,0 +1,135 @@
+.slide#landing-slide
+  %section.middle
+    %hgroup
+    %h1 The Phenomenal Gem
+    %h2 Putting Feature as a Service on Rails
+    %span{:id=>"left-init-key"}
+    =image_tag("pheno_logo.png",:width=>"30%")
+
+.slide#table-of-contents
+  %header
+    %h1 Contents
+  %section
+    %ol#toc-list
+
+// ======== Introduction ========
+.slide.transitionSlide#introduction
+  %section.middle
+    %h2 Introduction
+    %p Setting the scene
+
+.slide
+  %header
+    %h1 Introduction
+    %h2 Setting the scene
+  %section.middle
+    %p
+      %strong From
+      insulated desktop
+      %strong to
+      multi-plateform, multi-user, customizable applications
+    .big-arrow
+      ⇩
+    %p
+      Poeple expect applications to adapt to their needs
+      %br
+      =link_to "Example", :root
+
+// ======== Motivation ========
+.slide.transitionSlide#motivation
+  %section.middle
+    %h2 Motivation
+
+.slide
+  %header
+    %h1 Motivation
+  %section.middle
+    %ul.bullets
+      %li No support for this kind of adaptations in current languages
+      %li New paradigms emerged to address the adaptable application concern
+      %li Solutions exist, but improvements are needed to be industrial ready
+
+
+// ======== Objectives ========
+.slide.transitionSlide#objectives
+  %section.middle
+    %h2 Objectives
+    %p
+
+.slide
+  %header
+    %h1 Objectives
+  %section.middle
+    %p
+      %ul.bullets
+        %li Solve the problem by merging COP and FOP paradigms
+        %li Use Ruby, a real-world language
+        %li Integrate the solution in Ruby on Rails applications
+        %li Provide an industrial ready solution
+
+// ======== Approach ========
+.slide.transitionSlide#approach
+  %section.middle
+    %h2 Approach
+    %p
+
+// ======== Contributions ========
+.slide.transitionSlide#contributions
+  %section.middle
+    %h2 Contributions
+    %p
+
+.slide
+  %header
+    %h1 Contributions
+  %section
+    %h2 Concepts
+    %ul.bullets
+      %li Context as a Feature
+      %li Feature as a Service
+
+    %h2 Implementation
+    %ul.bullets
+      %li Phenomenal & Phenomenal Rails Gems
+      %li Visualiser tool
+      %li Activation condition
+      %li Validation case-study (Benubo)
+      %li Lite Domain Specific Language
+
+// ======== Conclusion ========
+.slide.transitionSlide#conclusion
+  %section.middle
+    %h2 Conclusion
+    %p
+
+.slide
+  %section
+    %header
+      %h1 Conclusion
+    %section.middle
+      %ul.bullets
+        %li First step towards merging COP & FOP paradigms
+        %li
+          =raw Pygments.highlight("require \"phenomenal\"", :lexer=>:ruby)
+          allows to adapt any existing Ruby application easily
+        %li Enhanced dynamic adaptability at a reasonable cost
+        %li Validated on a real Software as a Service
+
+.slide
+  %section
+    %header
+      %h1 That's the real story
+
+    %section.middle.formula{"data-build"=>"data-build"}
+      %span= image_tag("ruby.png",:width=>"10%")
+      +
+      %span= image_tag("rails.png",:width=>"10%")
+      +
+      %span= image_tag("pheno_logo.png",:width=>"10%")
+      \=
+      %span.hearth ♥
+
+// ======== Questions ? ========
+.slide
+  %section#question-slide.middle
+    %h2 Questions ?

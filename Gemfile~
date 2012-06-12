@@ -10,7 +10,7 @@ gem 'phenomenal_rails', :git => 'git://github.com/phenomenal/phenomenal_rails.gi
 gem 'fractals'
 gem 'geoip'
 gem 'haml-coderay'
-gem 'pygments.rb'
+gem 'pygment.rb'
 gem 'feedzirra'
 gem 'ruby-graphviz'
 gem 'jquery-rails'

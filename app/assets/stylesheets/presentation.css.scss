@@ -1,0 +1,83 @@
+//=require 'pygments'
+
+.presentation{
+  #toc-list > li {
+    font-size: 26px;
+    line-height: 33px;
+    opacity: 0.85;
+  }
+  #toc-list > li:hover {
+    opacity: 1;
+  }
+  #toc-list a {
+    border-bottom: 0;
+  }
+  #toc-list a:hover{
+    border-bottom: 2px solid #3f3f3f;
+  }
+  #toc-list img {
+    vertical-align: middle;
+    margin-left: 15px;
+  }
+  .slide{
+
+    &#landing-slide{
+      h1, h2 {
+        color: black;
+      }
+      h1 {
+        letter-spacing: -2px;
+        font-size: 66px;
+      }
+      h2 {
+        margin-top: -5px;
+        font-size: 35px;
+        letter-spacing: -1px;
+      }
+    }
+
+    section {
+      display: table-cell;
+      vertical-align: middle;
+      height: 700px;
+      width: 900px;
+
+      h2 {
+        margin-left:30px;
+      }
+
+      &#question-slide{
+        h2{
+          font-size: 40px;
+          margin: 0;
+          line-height: 10px;
+        }
+      }
+
+      &.formula{
+        span{
+          margin-bottom:50px;
+          &.hearth{
+            color:#cc0825;
+            font-size:4em;
+          }
+        }
+      }
+    }
+
+    .counter{
+      font-size:1.5em;
+      font-weigth:bold;
+      color:#000000;
+    }
+
+    .bullets{
+      text-align:left;
+      font-size:1.3em;
+      list-style: inside, disc;
+    }
+    .big-arrow{
+      font-size:10em;
+    }
+  }
+}

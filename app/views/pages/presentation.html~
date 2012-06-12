@@ -1,0 +1,23 @@
+#reveal
+  .state-background
+  .slides
+    %section
+      %h1 The Phenomenal Gem
+      %h2.inverted
+        Putting Feature as a Service on Rails
+      =image_tag("pheno_logo.png", :width=>"25%", :class=>"no_css")
+    %section
+      %h2 Context Definition
+      =raw Pygments.highlight(File.read("#{Rails.root}/app_phenomenal/base/base.rb"), :lexer=>:ruby)
+      %blockquote Plop la quote
+
+
+
+  %aside.controls
+    =link_to raw("&#x25C4;"), "#", :class=>"left"
+    =link_to raw("&#x25BA;"), "#", :class=>"right"
+    =link_to "", "#", :class=>"up"
+    =link_to "", "#", :class=>"down"
+
+  .progress
+    %span

@@ -23,6 +23,6 @@ class PagesController < ApplicationController
 
   def presentation
     @title="Thesis presentation"
-    render :layout=>"presentation"
+    render "presentation", :layout=>"layouts/presentation"
   end
 end
