@@ -287,7 +287,7 @@
     this._slides = (slides || []).map(function(el, idx) {
       return new Slide(el, idx);
     });
-    var h = window.location.hash;
+    var h = sessionStorage['current_slide']||window.location.hash; // Added to store current presentation state
     try {
       this.current = h;
     } catch (e) { /* squeltch */ }
@@ -377,6 +377,7 @@
           this._slides[x-4].setState(x-currentIndex);
         }
       }
+      sessionStorage['current_slide']=window.location.hash // Added to save presentation state
     },
 
     current: 0,
@@ -407,11 +408,11 @@
     switch3D: function() {
       toggleClass(document.body, 'three-d');
     },
-    toggleHightlight: function() {
-      var link = query('#prettify-link');
-      link.disabled = !(link.disabled);
-      sessionStorage['highlightOn'] = !link.disabled;
-    },
+//    toggleHightlight: function() {
+//      var link = query('#prettify-link');
+//      link.disabled = !(link.disabled);
+//      sessionStorage['highlightOn'] = !link.disabled;
+//    },
     changeTheme: function() {
       var linkEls = queryAll('link.theme');
       var sheetIndex = 0;
@@ -451,8 +452,8 @@
           this.showNotes(); break;
         case 83:  // S
           this.viewSource(); break;
-        case 84:  // T
-          this.changeTheme(); break;
+//        case 84:  // T
+//          this.changeTheme(); break;
       }
     },
     _touchStartX: 0,
@@ -497,14 +498,14 @@
   // load highlight setting from session storage, if available.
   // session storage can only store strings so we have to assume type coercion
   // for the boolean logic here
-  query('#prettify-link').disabled = !(sessionStorage['highlightOn'] == 'true');
+  //query('#prettify-link').disabled = !(sessionStorage['highlightOn'] == 'true');
 
   // disable style theme stylesheets
-  var linkEls = queryAll('link.theme');
-  var stylesheetPath = sessionStorage['theme'] || '<%=asset_path("html5rocks/default.css")%>';
-  linkEls.forEach(function(stylesheet) {
-    stylesheet.disabled = !(stylesheet.href.indexOf(stylesheetPath) != -1);
-  });
+//  var linkEls = queryAll('link.theme');
+//  var stylesheetPath = sessionStorage['theme'] || '<%=asset_path("html5rocks/moon.css")%>';
+//  linkEls.forEach(function(stylesheet) {
+//    stylesheet.disabled = !(stylesheet.href.indexOf(stylesheetPath) != -1);
+//  });
 
   // Initialize
   var li_array = [];

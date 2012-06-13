@@ -1,4 +1,15 @@
+//=require 'html5rocks/moon'
+//=require 'html5rocks/common'
 //=require 'pygments'
+menu{
+  a {
+    border-bottom:none;
+  }
+}
+
+header{
+ letter-spacing:-1px;
+}
 
 .presentation{
   #toc-list > li {
@@ -36,15 +47,61 @@
       }
     }
 
+    header {
+      height:100px;
+    }
     section {
       display: table-cell;
       vertical-align: middle;
-      height: 700px;
+      padding-top:75px;
+      height: 600px;
       width: 900px;
+      padding-left:30px;
+      padding-right:30px;
+
+      &.middle{
+        height: 600px;
+      }
+
+      .code_snippet{
+        &.left{
+          width:425px;
+          padding-right:15px;
+        }
+      }
+
+      .left{
+        float:left;
+        margin-right:15px;
+      }
+
+      .center{
+        text-align:center;
+      }
+
+      .right{
+        float:right;
+      }
+
+      .code_graphical_view {
+      }
+
+      .clear{
+        clear:both;
+      }
+
+      p{
+        line-height:30px;
+        margin-top:25px;
+        margin-bottom:25px;
+      }
+
 
       h2 {
         margin-left:30px;
       }
+
+
 
       &#question-slide{
         h2{
@@ -69,6 +126,8 @@
       font-size:1.5em;
       font-weigth:bold;
       color:#000000;
+      text-align:right;
+      width:840px;
     }
 
     .bullets{
@@ -77,6 +136,7 @@
       list-style: inside, disc;
     }
     .big-arrow{
+      margin: 50px;
       font-size:10em;
     }
   }

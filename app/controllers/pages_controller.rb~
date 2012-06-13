@@ -20,9 +20,4 @@ class PagesController < ApplicationController
     #phen_graphical_view("#{Rails.root}/public/your_context.png")
     #TODO
   end
-
-  def presentation
-    @title="Thesis presentation"
-    render "presentation", :layout=>"layouts/presentation"
-  end
 end

@@ -403,13 +403,14 @@ section.middle {
 }
 
 pre {
-  font: 'Inconsolata';
   color: #000;
+  /*font: 'Inconsolata';
+
   text-align: left;
   padding: 10px 20px;
-  border-radius: 10px;
-  background: rgba(255, 204, 0, 0.05);
-  border: 2px solid rgba(255, 204, 0, 0.3);
+  /*border-radius: 10px;*/
+  /*background: rgba(255, 204, 0, 0.05);*/
+  /*border: 2px solid rgba(255, 204, 0, 0.3);*/
   /*text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;*/
 }
 
@@ -438,14 +439,14 @@ button.large {
 
 pre b {
   font-weight: normal;
-  color: #c61800;
-  text-shadow: #c61800 0 0 1px;
+  /*color: #c61800;*/
+  /*text-shadow: #c61800 0 0 1px;*/
   /*letter-spacing: -1px;*/
 }
 pre em {
   font-weight: normal;
   font-style: normal;
-  color: #18a600;
+  /*color: #18a600;*/
   text-shadow: #18a600 0 0 1px;
 }
 pre input[type="range"] {

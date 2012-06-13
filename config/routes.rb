@@ -3,7 +3,7 @@ Rphenomenal::Application.routes.draw do
   match "/project", :to => "Pages#project"
   match "/api", :to => "Pages#api"
   match "/introspection", :to => "Pages#introspection"
-  match "/presentation", :to => "Pages#presentation"
+  match "/presentations/thesis", :to => "Presentations#thesis"
   resource :newsletters
   resource :application_states
 end

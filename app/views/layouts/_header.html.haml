@@ -1,8 +1,8 @@
 .row-fluid#header_top{:style=>"background-color:#{phenomenal_color(127,127,127)}"}
   .container
-    .span6#logo_top
+    .span5#logo_top
       =link_to image_tag("phen_logo_top.png"), :root
-    .span6
+    .span7
       %ul#menu.nav.nav-pills
         %li= link_to "Home", root_path, {:class=>"active big_link"}
         %li.dropdown
@@ -12,6 +12,7 @@
           %ul.dropdown-menu
             %li=link_to "API", api_path
         %li=link_to "Introspection",introspection_path, {:class=>"active big_link"}
+        %li=link_to "Presentation", presentations_thesis_path,{:class=>"active big_link"}
 
 .row-fluid#header_bottom
   .container
