@@ -1,12 +1,12 @@
 .row-fluid#header_top{:style=>"background-color:#{phenomenal_color(127,127,127)}"}
   .container
-    .span5#logo_top
+    .span6#logo_top
       =link_to image_tag("phen_logo_top.png"), :root
-    .span7
+    .span6
       %ul#menu.nav.nav-pills
         %li= link_to "Home", root_path, {:class=>"active big_link"}
-        %li.dropdown
-          =link_to "Project",project_path,{:class=>"dropdown-toggle big_link", "data-toggle"=>"dropdown"}
+        //        %li.dropdown
+        //          =link_to "Project",project_path,{:class=>"dropdown-toggle big_link", "data-toggle"=>"dropdown"}
         %li.dropdown
           =link_to "Documentation","#",{:class=>"dropdown-toggle big_link", "data-toggle"=>"dropdown"}
           %ul.dropdown-menu
