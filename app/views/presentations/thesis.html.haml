@@ -125,6 +125,9 @@
       %h3 Context Visualizer
       =image_tag("/presentation_code/graphical_views/define_context.rb.png")
     .clear
+    %ul.bullets
+      %li <span class="highlight">context <span class="ss">:Evening</span></span> defines a new context with name "Evening"
+      %li <span class="highlight">feature <span class="ss">:DayTimesSense</span></span> defines a new feature with name "DayTimesSense"
 
 .slide
   %header
@@ -134,33 +137,43 @@
     .code_snippet
       %h3 Code
       =pygments("public/presentation_code/define_adaptation.rb")
-
+      %ul.bullets
+        %li <span class="highlight">adaptation_for <span class="s2">PagesHelper</span></span> specifies the class to be adapted
+        %li <span class="highlight">adapt <span class="ss">:phenomenal_color</span></span> adapts the instance method 
+        %li <span class="highlight">proceed</span> calls "super context" implementation
+        
 .slide
   %header
     %h1 Approach
     %h2 Define combined contexts
   %section
-    .code_snippet.left{:style=>"width:240px;"}
+    .code_snippet.left{:style=>"width:250px;"}
       %h3 Code
       =pygments("public/presentation_code/define_combined_context.rb")
     .code_graphical_view
       %h3 Context Visualizer
-      =image_tag("/presentation_code/graphical_views/define_combined_context.rb.png")
+      =image_tag("/presentation_code/graphical_views/define_combined_context.rb.png",:width=>"560px")
     .clear
+    %ul.bullets
+      %li Defines the combined context <span class="highlight"><span class="ss">"DayTimesSense,Evening"</span></span> 
+      %li Allows to specify behaviour specific for a combination of contexts
 
 .slide
   %header
     %h1 Approach
     %h2 Phenomenal: Define relationships
   %section
-    .code_snippet
+    .code_snippet.left{:style=>"width:510px;margin-right:0px"}
       %h3 Code
       =pygments("public/presentation_code/define_relationship.rb")
     .code_graphical_view
       %h3 Context Visualizer
-      =image_tag("/presentation_code/graphical_views/define_relationship.rb.png")
+      =image_tag("/presentation_code/images/defineRelationship.svg",:width=>"315px")
     .clear
-
+    %ul.bullets
+      %li <span class="highlight">implications_for <span class="ss">:InternetExplorer, :on</span>=><span class="ss">:Windows</span></span>
+      %li <span class="highlight">implies <span class="ss">:Windows</span></span>
+      %li Other relationships are available
 .slide
   %header
     %h1 Approach
