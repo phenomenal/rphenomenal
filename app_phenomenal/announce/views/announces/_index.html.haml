@@ -1,14 +1,21 @@
--cache("tweets", :expires_in => 42.minutes) do
-  -post = Twitter.user_timeline("phenomenal_cop").first
-  =link_to "https://twitter.com/#!/phenomenal_cop", :class=>"news" do
-    .row
-      .span4
-        .news_date
-          =image_tag "socials/Twitter-48.png"
-          =post.created_at.strftime("%-d %B %y at %l:%M %p")
-      .span8
-        .news_content
-          =post.text
-
+//-cache("tweets", :expires_in => 42.minutes) do
+//  -post = Twitter.user_timeline("phenomenal_cop").first
+//  =link_to "https://twitter.com/#!/phenomenal_cop", :class=>"news" do
+//    .row
+//      .span4
+//        .news_date
+//          =image_tag "socials/Twitter-48.png"
+//          =post.created_at.strftime("%-d %B %y at %l:%M %p")
+//      .span8
+//        .news_content
+//          =post.text
+.row
+  .span4
+    .news_date
+      =image_tag "socials/Twitter-48.png"
+      4 June 12 at 2:51 AM
+  .span8
+    .news_content
+      Check out our new http://t.co/eXhvkZmX website! Feel the power of Features as a Service on Rails!
 
 
