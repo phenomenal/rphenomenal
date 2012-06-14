@@ -1,5 +1,4 @@
 feature :DayTimesSense do
-  
   activation_condition do |env|
     hour = Time.now.hour
     if hour >= 6 && hour < 12
