@@ -1,6 +1,6 @@
-feature :Base do
+feature :zzzBase do
   is_persistent
-  
+
   activation_condition do |env|
     if env['HTTP_ACCEPT'].to_s.include?("text/html")
       request = ActionDispatch::Request.new(env)
