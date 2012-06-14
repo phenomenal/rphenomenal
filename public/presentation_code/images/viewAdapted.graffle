@@ -51,7 +51,7 @@
 	<array>
 		<dict>
 			<key>Bounds</key>
-			<string>{{0, -1}, {171, 186}}</string>
+			<string>{{0, -1}, {227, 148}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -90,27 +90,26 @@
 				<data>
 				BAtzdHJlYW10eXBlZIHoA4QBQISEhBJOU0F0dHJpYnV0
 				ZWRTdHJpbmcAhIQITlNPYmplY3QAhZKEhIQITlNTdHJp
-				bmcBlIQBK4GHAOKWtgkJYXBwCuKWvAlhcHBfcGhlbm9t
-				ZW5hbAoJCeKWtglhbmFseXNlcgoJCeKWtglhbm5vdW5j
-				ZQoJCeKWvAliYXNlCgkJCWJhc2UucmIKCQkJ4pa2CWNv
-				bnRyb2xsZXJzCgkJCeKWtgltb2RlbHMKCQkJ4pa2CXZp
-				ZXdzCgkJ4pa2CS4uLoaEAmlJAQKShISEDE5TRGljdGlv
-				bmFyeQCUhAFpA5KElpYHTlNDb2xvcoaShISEB05TQ29s
-				b3IAlIQBYwKEBGZmZmYAg8LAQDyDgYAAPAGGkoSWlhBO
-				U1BhcmFncmFwaFN0eWxlhpKEhIQQTlNQYXJhZ3JhcGhT
-				dHlsZQCUhARDQ0BTAACEhIQHTlNBcnJheQCUmQ2ShISE
-				CU5TVGV4dFRhYgCUhAJDZgALhpKEoqEAJIaShKKhADiG
-				koSioQBUhpKEoqEAcIaShKKhAIGMAIaShKKhAIGoAIaS
-				hKKhAIHEAIaShKKhAIHgAIaShKKhAIH8AIaShKKhAIEY
-				AYaShKKhAIE0AYaShKKhAIFQAYaGBYQEWzJmXQQkhpKE
-				lpYGTlNGb250hpKEhIQGTlNGb250HpSZJIQFWzM2Y10G
-				AAAAGgAAAP/+TAB1AGMAaQBkAGEARwByAGEAbgBkAGUA
-				AACEAWYMmwCbAZsAmwCGhpcCBJKEmJkDkpmSmpKckp2S
-				r5KEsZkchAVbMjhjXQYAAAAUAAAA//5IAGUAbAB2AGUA
-				dABpAGMAYQClDJsAmwGbAJsAhoaXAR+XA1CShJiZA5KZ
-				koSbmwGcAIOhoKA8g4GAgDwBhpKvkrCSnJKEnp4AAISg
-				mQ2SoZKjkqSSpZKmkqeSqJKpkqqSq5Kskq2SroYFogQk
-				hoaG
+				bmcBlIQBK3jilrYJCWFwcArilrwJYXBwX3BoZW5vbWVu
+				YWwKCQnilrYJYW5hbHlzZXIKCQnilrwJYW5ub3VuY2UK
+				CQkJ4pa8IHZpZXdzCgkJCQnilrwJYW5ub3VuY2VzCgkJ
+				CQkJX2luZGV4Lmh0bWwuaGFtbAoJCeKWtgkuLi6GhAJp
+				SQECkoSEhAxOU0RpY3Rpb25hcnkAlIQBaQOShJaWB05T
+				Q29sb3KGkoSEhAdOU0NvbG9yAJSEAWMChARmZmZmAIPC
+				wEA8g4GAADwBhpKElpYQTlNQYXJhZ3JhcGhTdHlsZYaS
+				hISEEE5TUGFyYWdyYXBoU3R5bGUAlIQEQ0NAUwAAhISE
+				B05TQXJyYXkAlJkNkoSEhAlOU1RleHRUYWIAlIQCQ2YA
+				C4aShKKhACSGkoSioQA4hpKEoqEAVIaShKKhAHCGkoSi
+				oQCBjACGkoSioQCBqACGkoSioQCBxACGkoSioQCB4ACG
+				koSioQCB/ACGkoSioQCBGAGGkoSioQCBNAGGkoSioQCB
+				UAGGhgWEBFsyZl0EJIaShJaWBk5TRm9udIaShISEBk5T
+				Rm9udB6UmSSEBVszNmNdBgAAABoAAAD//kwAdQBjAGkA
+				ZABhAEcAcgBhAG4AZABlAAAAhAFmDJsAmwGbAJsAhoaX
+				AgSShJiZA5KZkpqSnJKdkq+ShLGZHIQFWzI4Y10GAAAA
+				FAAAAP/+SABlAGwAdgBlAHQAaQBjAGEApQybAJsBmwCb
+				AIaGlwEflwNFkoSYmQOSmZKEm5sBnACDoaCgPIOBgIA8
+				AYaSr5KwkpyShJ6eAACEoJkNkqGSo5KkkqWSppKnkqiS
+				qZKqkquSrJKtkq6GBaIEJIaGhg==
 				</data>
 				<key>Text</key>
 				<string>{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf470
@@ -126,12 +125,10 @@
 \uc0\u9660 	app_phenomenal\
 		\uc0\u9654 	analyser\
 \pard\tx220\tx720\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li720\fi-720\slleading80\pardirnatural
-\ls1\ilvl0\cf3 		\uc0\u9654 	announce\
-		\uc0\u9660 	base\
-			base.rb\
-			\uc0\u9654 	controllers\
-			\uc0\u9654 	models\
-			\uc0\u9654 	views\
+\ls1\ilvl0\cf3 		\uc0\u9660 	announce\
+			\uc0\u9660  views\
+				\uc0\u9660 	announces\
+					_index.html.haml\
 		\uc0\u9654 	...}</string>
 				<key>VerticalPad</key>
 				<integer>0</integer>
@@ -185,7 +182,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2012-06-13 20:06:04 +0000</string>
+	<string>2012-06-13 20:10:42 +0000</string>
 	<key>Modifier</key>
 	<string>Loic Vigneron</string>
 	<key>NotesVisible</key>
