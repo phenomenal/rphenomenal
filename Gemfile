@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails'
+gem 'passenger'
 
 gem 'mysql2'
 gem 'haml'
