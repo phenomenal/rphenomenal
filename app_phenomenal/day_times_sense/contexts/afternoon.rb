@@ -1,9 +1,9 @@
 feature :DayTimesSense do
   context :Afternoon do
-    
     adaptations_for PagesHelper
     adapt :phenomenal_color do |r,g,b|
-      proceed(r,g,b)
+      k = 1.20
+      proceed((r*k).to_i,(g*k).to_i,(b*k).to_i)
     end
       
     # In combination with the analyser feature

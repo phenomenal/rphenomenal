@@ -14,6 +14,5 @@ class PagesController < ApplicationController
 
   def introspection
     @title="Introspection"
-    phen_graphical_view("#{Rails.root}/public/your_context.png")
   end
 end
