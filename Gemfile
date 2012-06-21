@@ -1,9 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'rails'
-gem 'passenger'
+#gem 'passenger'
 
-gem 'mysql2'
 gem 'haml'
 gem 'will_paginate'
 gem 'phenomenal', :git => 'git://github.com/phenomenal/phenomenal.git'
