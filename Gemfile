@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails'
-gem 'passenger'
+gem 'unicorn'
 
 gem 'haml'
 gem 'will_paginate'
