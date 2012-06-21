@@ -1,1 +1,2 @@
-# Context init
+# Change conflict policy for features...
+phen_change_conflict_policy { |a,b| priority_conflict_policy(a,b) }
