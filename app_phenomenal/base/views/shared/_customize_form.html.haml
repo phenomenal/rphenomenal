@@ -1,0 +1,10 @@
+#customize_form
+  =form_for @applicationState, :method=>:put do
+    -phen_defined_contexts.find_all{|c| c.is_a?(Phenomenal::Feature) && !c.name.nil? && !c.persistent}.each do |feature|
+      =check_box_tag "features[#{feature.name}]",feature.name,(true if @applicationState.features.include?(feature.name.to_s))
+      =feature
+      %br
+    .actions
+      %br
+      %button{:class=>"btn btn-primary btn-large"}
+        Pimp my app!
