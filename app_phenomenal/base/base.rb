@@ -1,7 +1,7 @@
 feature :Base do
   is_persistent
-  priority=0
-  
+  set_priority 0
+
   activation_condition do |env|
     if env['HTTP_ACCEPT'].to_s.include?("text/html")
       request = ActionDispatch::Request.new(env)

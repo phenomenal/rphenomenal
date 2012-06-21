@@ -1,14 +1,14 @@
 GIT
   remote: git://github.com/phenomenal/phenomenal.git
-  revision: 765e8f80bbca83351ae4310f752f407c375f1162
+  revision: 531c7779505bf6246d1bdc50c09f3e692ac912c9
   specs:
-    phenomenal (1.2.3)
+    phenomenal (1.2.4)
 
 GIT
   remote: git://github.com/phenomenal/phenomenal_rails.git
-  revision: c5a2eb88e0d661c6f3acd429542e84f8e6b6365c
+  revision: 0b2632b738f97c817166c0b24dabf39dd91b5791
   specs:
-    phenomenal_rails (1.2.4)
+    phenomenal_rails (1.2.5)
       phenomenal (~> 1.2.0)
       rails (>= 3.1.0)
 
