@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails'
 gem 'passenger'
-gem 'rvm-capistrano'
+#gem 'rvm-capistrano'
 gem 'capistrano'
 
 gem 'mysql2'

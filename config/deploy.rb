@@ -13,7 +13,7 @@ set :rvm_type, :system
 # GIT
 set :scm, "git"
 set :repository, "git@github.com:phenomenal/rphenomenal.git"
-set :branch, "master"
+set :branch, "Capify"
 set :deploy_via, :remote_cache
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
