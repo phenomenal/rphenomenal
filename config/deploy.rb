@@ -6,12 +6,9 @@ set :rvm_type, :system
 require "rvm/capistrano"
 require "bundler/capistrano"
 
-
 set :host , "work-server.lt-servers.be"
 set :user, "deployer"
 set :deploy_to, "/var/www/#{application}"
-
-
 
 # GIT
 set :scm, "git"
@@ -34,8 +31,18 @@ namespace :deploy do
     end
   end
   
-  
-  task :plop do
-    run "rvm info"
+  task :setup_config, roles: :app do
+    sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
   end
+  
+  after "deploy:setup", "deploy:setup_config"
+  task :create_log_files do
+    run "mkdir -p #{deploy_to}/shared/log/"
+    %w[production.log development.log].each do |file|
+      run "touch #{deploy_to}/shared/log/#{file}"
+      run "chmod 0666 #{deploy_to}/shared/log/#{file}"
+    end
+  end
+  before "deploy:finalize_update", "deploy:create_log_files"
+  
 end

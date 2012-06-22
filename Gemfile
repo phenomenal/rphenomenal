@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails'
-gem 'passenger'
+gem 'unicorn'
 gem 'capistrano'
 gem 'rvm-capistrano'
 
