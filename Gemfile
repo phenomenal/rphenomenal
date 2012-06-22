@@ -2,6 +2,8 @@ source 'http://rubygems.org'
 
 gem 'rails'
 gem 'unicorn'
+gem 'capistrano'
+gem 'rvm-capistrano'
 
 gem 'haml'
 gem 'will_paginate'
