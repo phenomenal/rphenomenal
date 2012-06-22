@@ -1,0 +1,79 @@
+h1. geoip
+
+h2. 'Geographic info for an IP address'
+
+h2. What
+
+GeoIP searches a GeoIP database from http://maxmind.com for a given host or IP address,
+and returns information about the country, city and/or ISP for that IP address,
+depending on the database version.
+
+h2. Installing
+
+<pre>sudo gem install geoip</pre>
+
+h2. Locations
+
+  "http://github.com/cjheath/geoip":http://github.com/cjheath/geoip
+  <br>
+  "http://geoip.rubyforge.org/":http://geoip.rubyforge.org/
+
+h2. Prerequisites
+
+You need one of the free GeoLite country, city or ASN databases, or a subscription database version.
+The last known download locations for the GeoLite database versions are
+"http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz":http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz
+"http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz":http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
+"http://geolite.maxmind.com/download/geoip/database/asnum/GeoIPASNum.dat.gz":http://geolite.maxmind.com/download/geoip/database/asnum/GeoIPASNum.dat.gz
+
+This API requires the database to be decompressed for searching.
+
+h2. Example
+
+    <pre>
+    require 'geoip'
+    c = GeoIP.new('GeoIP.dat').country('www.nokia.com')
+    => ["www.nokia.com", "147.243.3.83", 69, "FI", "FIN", "Finland", "EU"]
+    c.country_code3
+    => "FIN"
+    c.to_hash
+    => {:country_code3=>"FIN", :country_name=>"Finland", :continent_code=>"EU",
+    :request=>"www.nokia.com", :country_code=>69, :country_code2=>"FI", :ip=>"147.243.3.83"}
+    <br>
+    c = GeoIP.new('GeoLiteCity.dat').city('github.com')
+    => ["github.com", "207.97.227.239", "US", "USA", "United States", "NA", "CA",
+    "San Francisco", "94110", 37.7484, -122.4156, 807, 415, "America/Los_Angeles"]
+    >> c.longitude
+    => -122.4156
+    >> c.timezone
+    => "America/Los_Angeles"
+    <br>
+    c = GeoIP.new('GeoIPASNum.dat').asn("www.fsb.ru")
+    => ["AS8342", "RTComm.RU Autonomous System"]
+    </pre>
+
+h2. Source Repository
+
+The trunk repository is <code>http://github.com/cjheath/geoip</code>
+
+h2. License
+
+I don't normally use the GPL license, but this one is derived
+from Maxmind's code, so I use the license they use.
+
+This version Copyright (C) 2005 Clifford Heath
+Derived from the C version, Copyright (C) 2003 MaxMind LLC
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
