@@ -1,4 +1,4 @@
-set :application, "rphenomenal2"
+set :application, "rphenomenal"
 # RVM System wide
 set :rvm_ruby_string, "ruby-1.9.3-p125@#{application}"
 set :rvm_type, :system
@@ -27,15 +27,15 @@ namespace :deploy do
   %w[start stop restart].each do |command|
     desc "#{command} unicorn server"
     task command, :roles=>:app do
-      puts "/etc/init.d/unicorn_#{application} #{command}"
+      run "/etc/init.d/unicorn_#{application} #{command}"
     end
   end
   
-  task :setup_config, roles: :app do
-    sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
+  task :setup_unicorn_init, roles: :app do
+    run "sudo ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
   end
+  after "deploy:finalize_update", "deploy:setup_unicorn_init"
   
-  after "deploy:setup", "deploy:setup_config"
   task :create_log_files do
     run "mkdir -p #{deploy_to}/shared/log/"
     %w[production.log development.log].each do |file|
