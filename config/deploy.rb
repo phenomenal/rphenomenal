@@ -36,7 +36,6 @@ namespace :deploy do
   
   
   task :plop do
-    run "rvm use ruby-1.9.3-p125@tmp --create"
     run "rvm info"
   end
 end

@@ -2,8 +2,8 @@ source 'http://rubygems.org'
 
 gem 'rails'
 gem 'passenger'
-gem 'rvm-capistrano'
 gem 'capistrano'
+gem 'rvm-capistrano'
 
 gem 'mysql2'
 gem 'haml'
