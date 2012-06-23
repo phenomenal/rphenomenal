@@ -1,41 +1,51 @@
 OK | montrer benubo (screenshot, tab = features)
 
-demo au bon endroit?
-
-parler moins vite
--> difficultés de suivre slides + oral en même temps
+FORCEOK | demo au bon endroit?
 
 OK | 23: leaded -> lead
 OK | 24: responses per seconds -> responses per second
-
 OK | benchmark: la légende est fausse (changer les axes)
 OK |-> plus expliquer, mettre 2 phrases pour expliquer les couleurs bleu/vert
-
 KO | 2: bonne intro = pas besoin de toc
 OK | 3: (général) text trop petit p.r. à la taille totale
 OK | 6: no language-level support...
 OK | 6: industrial ready -> industrially ready
-
-/* j'ai mis des ifs et strategy mais je suis pas convaincu */
-6: montrer graphiquement application monolithique
--> on prend tout ou rien, pas satisfaisant
--> possibilité de prendre que des “piéces”, adapté à l’utilisateur en question
--> plusieurs if vs. activation condition centralisée (comment le montrer?)
--> vendre votre approche aux gens, montrer clairement l’avantage en le comparant à ce qui existe
-Demo: dire que votre site web est en même temps votre exemple/demo
-
 OK | + mettre l’addresse web sur les slides
-10: why, what, how
--> pas directement montrer le how, mettre une petite motivation
 OK | 11: logique miniuscules/majuscules
-11: DSL: mentionner que vous n’avez pas besoin d’un parser (c’est du ruby pur, pas un langage pour soi)
-14: motiver avant de l’introduire
-14+15: bien dire que tous les combinaisons context/feature sont possibles
-26: structurer présentation selon caaf, faas (2 grandes parties de la présentation)
--> expliquer caaf et faas au début de la présentation
 OK | /* j'ai juste mis un slide de transition entre phen et phen rails*/ -> division claire entre les 2 dans Approach
-22: logo benubo pas très bien visible
--> peut-être changer la couleur du logo
-23: bizarre que vous mentionnez benubo mais mettez l’autre page comme exemple
+  26: structurer présentation selon caaf, faas (2 grandes parties de la présentation)
+  -> expliquer caaf et faas au début de la présentation
+
 KO | 28: merger contributions/conclusion?
 OK | 29: mettre addresse web
+
+
+TODO
+----
+6: montrer graphiquement application monolithique
+  -> on prend tout ou rien, pas satisfaisant
+  -> possibilité de prendre que des “piéces”, adapté à l’utilisateur en question
+  -> plusieurs if vs. activation condition centralisée (comment le montrer?)
+  -> vendre votre approche aux gens, montrer clairement l’avantage en le comparant à ce qui existe
+  
+10: why, what, how -> pas directement montrer le how, mettre une petite motivation
+
+14: motiver avant de l’introduire
+
+22: logo benubo pas très bien visible -> peut-être changer la couleur du logo
+
+23: bizarre que vous mentionnez benubo mais mettez l’autre page comme exemple
+
+
+A pas oublier quand on presente :
+---------------------------------
+* parler moins vite
+  -> difficultés de suivre slides + oral en même temps
+  
+* Demo: dire que votre site web est en même temps votre exemple/demo
+  
+* DSL: mentionner que vous n’avez pas besoin d’un parser (c’est du ruby pur, pas un langage pour soi)
+
+* 14+15: bien dire que tous les combinaisons context/feature sont possibles
+
+  
