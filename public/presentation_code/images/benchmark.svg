@@ -94,10 +94,10 @@
 	</g>
 	<path  d='M80.2,54.1 L80.2,442.4 L675.0,442.4 L675.0,54.1 L80.2,54.1 Z '></path>
 	<g transform="translate(17.6,248.3) rotate(270)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
-		<text>Seconds</text>
+		<text>Number of responses per second</text>
 	</g>
 	<g transform="translate(377.6,491.9)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
-		<text>Number of response per seconds</text>
+		<text>Number of requests per second</text>
 	</g>
 	<g transform="translate(377.6,31.6)" style="stroke:none; fill:black; font-family:Arial; font-size:12.00pt; text-anchor:middle">
 		<text>Time</text>

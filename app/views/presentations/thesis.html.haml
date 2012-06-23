@@ -27,13 +27,13 @@
       %strong From
       isolated desktop
       %strong to
-      multi-plateform, multi-user, customizable applications
+      multi-user, customizable applications
     .big-arrow
       ⇩
     %p
       People expect applications to adapt to their needs
-      %br
-      =link_to "Example", :root
+    %p
+      =link_to "www.phenomenal-gem.com", :root
 
 // ======== Motivation ========
 .slide.transitionSlide#motivation
@@ -43,11 +43,18 @@
 .slide
   %header
     %h1 Motivation
-  %section.middle
+  %section
+    .code-snippet.left
+      %h3 Conditional Statements
+      =pygments("public/presentation_code/intro_if.rb")
+    .code-snippet.right
+      %h3 Strategy pattern
+      =pygments("public/presentation_code/intro_context.rb")
+    .clear
     %ul.bullets
-      %li No support for this kind of adaptations in current languages
+      %li No language-level support for this kind of adaptations
       %li New paradigms emerged to address the adaptable application concern
-      %li Solutions exist, but improvements are needed to be industrial ready
+      %li Solutions exist, but improvements are needed to be industrialy ready
 
 
 // ======== Objectives ========
@@ -65,7 +72,7 @@
         %li Solve the problem by merging COP and FOP paradigms
         %li Use Ruby, a real-world language
         %li Integrate the solution in Ruby on Rails applications
-        %li Provide an industrial ready and validated solution
+        %li Provide an industrialy ready and validated solution
 
 // ======== Approach ========
 .slide.transitionSlide#approach
@@ -97,6 +104,11 @@
       %strong context
       with extra capabilities
 
+.slide.subTransitionSlide
+  %section.middle
+    %h2 Approach
+    %p The Phenomenal Gem
+
 .slide
   %header
     %h1 Approach
@@ -110,7 +122,7 @@
       %li Behavioral adaptations
       %li Relationships
       %li Visualization tool
-      %li Lightweight Domain Specific Language
+      %li Lightweight domain specific language
 
 .slide
   %header
@@ -173,6 +185,12 @@
       %li <span class="highlight">implications_for <span class="ss">:InternetExplorer, :on</span>=><span class="ss">:Windows</span></span>
       %li <span class="highlight">implies <span class="ss">:Windows</span></span>
       %li Other relationships are available
+
+.slide.subTransitionSlide
+  %section.middle
+    %h2 Approach
+    %p The Phenomenal Rails Gem
+
 .slide
   %header
     %h1 Approach
@@ -209,13 +227,13 @@
     %h1 Approach
     %h2 Phenomenal Rails: Activation Condition
   %section
-    .left.code_snippet
+    .left.code_snippet{:style=>"margin-bottom:0px;"}
       =pygments("public/presentation_code/activation_condition.rb")
     .right
       =image_tag("/presentation_code/images/application_stack.svg",:width=>"350x")
     .clear
-    %ul.bullets
-      %li Contexts have to be activated per request (user change at each request)
+    %ul.bullets{:style=>"margin-top:0px;"}
+      %li Contexts have to be activated per request
       %li
         <span class="highlight">activation_condition</span>
         allows to store a block evaluated before each request
@@ -247,8 +265,7 @@
       =image_tag("/presentation_code/images/viewAdapted.svg")
     .clear
     %ul.bullets
-      %li
-        To adapt a view a context must define a file with the same name and views folder
+      %li To adapt a view a context must define a file with the same name and views folder
       %li The file displayed is the one in active contexts with higher precedence
 
 // ======== Validation ========
@@ -256,42 +273,51 @@
   %section.middle
     %h2 Validation
     %p
-    
+
 .slide
   %header
     %h1 Validation
     %h2 Benubo
-  %section.middle
+  %section.center
     %p
       =image_tag("/presentation_code/images/benubo.png")
       %br
       SaaS ERP to manage SME activities developed by Belighted
+    %p
+      =image_tag("/presentation_code/images/benubo-features-on.png")
     %ul.bullets
       %li Validates our concepts
       %li Leads to improvements of our solution
-      %li Provides industrial feedback  
+      %li Provides industrial feedback
 .slide
   %header
     %h1 Validation
     %h2 Feature as a Service
   %section.middle
     %p
-      The development of the previous concepts and their application in Benubo leaded to the notion of
+      The development of the previous concepts and their application in Benubo lead to the notion of
       %strong Feature as a Service
     %ul.bullets
       %li FaaS pushes the idea of Software as a Service further
       %li Allows to sell sub-components of an application to users
       %li Doable very easily with the Phenomenal Rails Gem
-    %p=link_to "Example", :root
-          
+    %p=link_to "www.phenomenal-gem.com", :root
+
 .slide
   %header
     %h1 Validation
     %h2 Benchmarks
-  %section.middle  
-    %p
-      =image_tag("/presentation_code/images/benchmark.svg")
-    
+  %section
+    %p.center
+      =image_tag("/presentation_code/images/benchmark.svg",:width=>"600px")
+    %ul.bullets
+      %li
+        %strong.green Refactoring:
+        Original application refactored in persistent features
+      %li
+        %strong.blue FaaS:
+        Enabling Feature as a Service on the refactored application
+
 // ======== Contributions ========
 .slide.transitionSlide#contributions
   %section.middle
@@ -313,7 +339,7 @@
       %li Visualization tool
       %li Activation condition
       %li Validation case-study (Benubo)
-      %li Lightweight Domain Specific Language
+      %li Lightweight domain specific language
 
 // ======== Conclusion ========
 .slide.transitionSlide#conclusion
@@ -338,13 +364,16 @@
     %h1 That's the real story
 
   %section.middle.formula{"data-build"=>"data-build"}
-    %span= image_tag("ruby.png",:width=>"10%")
+    %span= image_tag("ruby.png",:height=>"104px")
     +
-    %span= image_tag("rails.png",:width=>"10%")
+    %span= image_tag("rails.png",:height=>"104px")
     +
-    %span= image_tag("pheno_logo.png",:width=>"10%")
+    %span= image_tag("pheno_logo.png",:height=>"104px")
     \=
     %span.hearth ♥
+
+    %span
+      =link_to "www.phenomenal-gem.com", :root
 
 // ======== Questions ? ========
 .slide

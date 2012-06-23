@@ -89,7 +89,7 @@ body {
 }
 
 .slide p, .slide textarea {
-  font-size: 20px;
+  font-size: 26px;
 }
 
 .slide .counter {
@@ -162,6 +162,21 @@ body {
 }
 
 .slide.transitionSlide img {
+  opacity: 0.25;
+  width: 64px;
+  height: 64px;
+}
+
+.slide.subTransitionSlide h2 {
+  font-size: 40px;
+  margin: 0;
+  line-height: 10px;
+}
+.slide.subTransitionSlide p {
+  margin: 0;
+}
+
+.slide.subTransitionSlide img {
   opacity: 0.25;
   width: 64px;
   height: 64px;
@@ -355,7 +370,6 @@ a {
 }
 
 li {
-  list-style: none;
   padding: 10px 0;
 }
 
@@ -372,7 +386,7 @@ pre button {
 }
 
 .bullets {
-  font-size: 40px;
+  font-size: 26px;
 }
 
 section.left {
@@ -394,12 +408,15 @@ section.small li {
 }
 
 section.middle {
-  line-height: 68px;
   text-align: center;
   display: table-cell;
   vertical-align: middle;
   height: 700px;
   width: 900px;
+}
+
+section.middle p, section.middle li{
+  margin-bottom: 34px;
 }
 
 pre {
@@ -533,9 +550,9 @@ video {
   column-count: 2;
 }
 
-.summary li::before, .bullets li::before {
-  content: '⚫ ';
-}
+/*.summary li::before, .bullets li::before {*/
+/*  content: '';*/
+/*}*/
 
 .stroke {
   -webkit-text-stroke-color: red;

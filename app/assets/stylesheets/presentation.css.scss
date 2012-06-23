@@ -12,19 +12,23 @@ header{
 }
 
 .presentation{
+  .blue{
+    color:blue;
+  }
+  .green{
+    color:green;
+  }
   #toc-list > li {
-    font-size: 26px;
+    font-size: 36px;
     line-height: 33px;
     opacity: 0.85;
   }
   #toc-list > li:hover {
     opacity: 1;
+    cursor:pointer;
   }
   #toc-list a {
     border-bottom: 0;
-  }
-  #toc-list a:hover{
-    border-bottom: 2px solid #3f3f3f;
   }
   #toc-list img {
     vertical-align: middle;
@@ -49,6 +53,9 @@ header{
 
     header {
       height:100px;
+      h2{
+        margin-top:5px;
+      }
     }
     section {
       display: table-cell;
@@ -98,12 +105,9 @@ header{
         margin-bottom:25px;
       }
 
-
       h2 {
         margin-left:30px;
       }
-
-
 
       &#question-slide{
         h2{
@@ -121,6 +125,10 @@ header{
             font-size:4em;
           }
         }
+        a{
+          text-decoration:none;
+          border-bottom:none;
+        }
       }
     }
 
@@ -134,12 +142,10 @@ header{
 
     .bullets{
       text-align:left;
-      font-size:1.3em;
       list-style: inside, disc;
     }
     .big-arrow{
-      margin: 50px;
-      font-size:10em;
+      font-size:96px;
     }
   }
 }
