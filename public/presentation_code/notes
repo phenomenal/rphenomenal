@@ -10,14 +10,20 @@ KO | 2: bonne intro = pas besoin de toc
 OK | 3: (général) text trop petit p.r. à la taille totale
 OK | 6: no language-level support...
 OK | 6: industrial ready -> industrially ready
+
 OK | + mettre l’addresse web sur les slides
 OK | 11: logique miniuscules/majuscules
 OK | /* j'ai juste mis un slide de transition entre phen et phen rails*/ -> division claire entre les 2 dans Approach
   26: structurer présentation selon caaf, faas (2 grandes parties de la présentation)
   -> expliquer caaf et faas au début de la présentation
+OK | 22: logo benubo pas très bien visible -> peut-être changer la couleur du logo
+  
+OK | 23: bizarre que vous mentionnez benubo mais mettez l’autre page comme exemple
 
 KO | 28: merger contributions/conclusion?
 OK | 29: mettre addresse web
+
+OK | 10: why, what, how -> pas directement montrer le how, mettre une petite motivation
 
 
 TODO
@@ -28,13 +34,10 @@ TODO
   -> plusieurs if vs. activation condition centralisée (comment le montrer?)
   -> vendre votre approche aux gens, montrer clairement l’avantage en le comparant à ce qui existe
   
-10: why, what, how -> pas directement montrer le how, mettre une petite motivation
 
-14: motiver avant de l’introduire
-
-22: logo benubo pas très bien visible -> peut-être changer la couleur du logo
-
-23: bizarre que vous mentionnez benubo mais mettez l’autre page comme exemple
+QUID ?
+------
+14: motiver avant de l’introduire ==> C'est a faire pour les slides apres alors? me je ne le ferai pas... ça sert a rien de motiver ça, ça fait partie de l'approche
 
 
 A pas oublier quand on presente :
