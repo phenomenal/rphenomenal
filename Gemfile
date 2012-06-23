@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'bootstrap-sass-rails'
 gem 'bootstrap_forms'
 gem 'twitter'
+gem 'sqlite3'
 
 group :assets do
   gem 'sass-rails'
@@ -31,7 +32,6 @@ end
 
 group :development do
   gem 'rspec-rails'
-  gem 'sqlite3'
 end
 
 group :test do
