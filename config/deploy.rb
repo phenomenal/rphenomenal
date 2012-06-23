@@ -13,7 +13,7 @@ set :deploy_to, "/var/www/#{application}"
 # GIT
 set :scm, "git"
 set :repository, "git@github.com:phenomenal/rphenomenal.git"
-set :branch, "Capify"
+set :branch, "master"
 set :deploy_via, :remote_cache
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
