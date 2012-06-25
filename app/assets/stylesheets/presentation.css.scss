@@ -148,6 +148,9 @@ header{
     .big-arrow{
       font-size:96px;
       text-align:center;
+      &.left{
+        margin-left:60px;
+      }
     }
   }
 }
