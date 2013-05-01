@@ -27,7 +27,7 @@ group :assets do
   gem 'uglifier'
   gem 'yui-compressor'
   gem 'execjs'
-  gem "therubyracer", :require => 'v8'
+  gem "therubyracer"
 end
 
 group :development do
