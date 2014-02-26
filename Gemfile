@@ -1,9 +1,10 @@
 source 'http://rubygems.org'
 
-gem 'rails', "3.2.13"
 gem 'unicorn'
-gem 'capistrano'
-gem 'rvm-capistrano'
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-rvm'
+gem 'capistrano-rails', '~> 1.1'
+gem 'capistrano-bundler'
 
 gem 'haml'
 gem 'will_paginate'
@@ -28,10 +29,6 @@ group :assets do
   gem 'yui-compressor'
   gem 'execjs'
   gem "therubyracer"
-end
-
-group :development do
-  gem 'rspec-rails'
 end
 
 group :test do

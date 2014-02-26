@@ -1,64 +1,42 @@
-set :application, "rphenomenal"
+# config valid only for Capistrano 3.1
+lock '3.1.0'
 
-# RVM System wide
-set :rvm_ruby_string, "ruby-1.9.3-p125@#{application}"
-set :rvm_type, :system
+set :application, 'rphenomenal'
+set :repo_url, 'git@github.com:phenomenal/rphenomenal.git'
+set :branch, ENV["branch"] || 'master'
 
-require "rvm/capistrano"
-require "bundler/capistrano"
+set :deploy_to, '/home/rphenomenal-production'
 
-set :host , "work-server.lt-servers.be"
-set :user, "deployer"
-set :deploy_to, "/var/www/#{application}"
+set :rvm_type, :user
+set :rvm_ruby_version, 'ruby-1.9.3@rphenomenal-production'
 
-# GIT
-set :scm, "git"
-set :repository, "git@github.com:phenomenal/rphenomenal.git"
-set :branch, "master"
-set :deploy_via, :remote_cache
-default_run_options[:pty] = true
-ssh_options[:forward_agent] = true
+#set :linked_files, %w{config/database.yml}
+set :linked_dirs, %w{bin log tmp/pids}
 
-# Roles
-role :app, "#{host}" 
-role :web, "#{host}" 
-role :db,  "#{host}", :primary => true
-
-# Tasks
-after "deploy", "deploy:cleanup"
+set :keep_releases, 5
 
 namespace :deploy do
-  %w[start stop restart].each do |command|
-    desc "#{command} unicorn server"
-    task command, :roles=>:app do
-      run "/etc/init.d/unicorn_#{application} #{command}"
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute "kill -s TERM `cat #{shared_path}/tmp/pids/unicorn.pid`"
+      execute "cd #{release_path} && ~/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do bundle exec unicorn -c #{current_path}/config/unicorn/#{fetch(:stage)}.rb -E #{fetch(:stage)} -D"
     end
   end
-  
-  task :create_directories, roles: :app do
-    run "mkdir -p #{deploy_to}/releases/"
-    run "mkdir -p #{deploy_to}/shared/log/"
-    run "mkdir -p #{deploy_to}/shared/pids/"
-  end
-  before "deploy:update_code", "deploy:create_directories"
-  
-  task :create_log_files do
-    run "mkdir -p #{deploy_to}/shared/log/"
-    %w[production.log development.log].each do |file|
-      run "touch #{deploy_to}/shared/log/#{file}"
-      run "chmod 0666 #{deploy_to}/shared/log/#{file}"
+
+  task :start do
+    on roles(:app) do
+      execute "cd #{release_path} && ~/.rvm/bin/rvm #{fetch(:rvm_ruby_version)} do bundle exec unicorn -c #{current_path}/config/unicorn/#{fetch(:stage)}.rb -E #{fetch(:stage)} -D"
     end
   end
-  after "deploy:create_directories", "deploy:create_log_files"
-  
-  task :setup_unicorn_init, roles: :app do
-    run "sudo ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
+
+  task :stop do
+    on roles(:app) do
+      execute "kill -s TERM `cat #{shared_path}/tmp/pids/unicorn.pid`"
+    end
   end
-  after "deploy:finalize_update", "deploy:setup_unicorn_init"
-  
-  task :update_db do
-    run "cd #{deploy_to}/current/ && bundle exec rake db:create && bundle exec rake db:migrate"
-  end
-  after "deploy:create_symlink", "deploy:update_db"
-  
+
+  after :publishing, :restart
+
 end
