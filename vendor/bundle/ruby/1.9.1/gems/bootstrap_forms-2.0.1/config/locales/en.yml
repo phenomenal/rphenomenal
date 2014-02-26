@@ -1,6 +1,0 @@
-en:
-  bootstrap_forms:
-    errors:
-      header: "There were errors that prevented this %{model} from being saved:"
-    buttons:
-      cancel: 'Cancel'
