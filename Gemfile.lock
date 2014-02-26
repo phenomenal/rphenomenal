@@ -6,9 +6,9 @@ GIT
 
 GIT
   remote: git://github.com/phenomenal/phenomenal_rails.git
-  revision: fbe26f612cc8727dcaa5e1ee816f0a4d59c84c35
+  revision: f86a9389c0024fc14ba85ee27e118d70da55f0d2
   specs:
-    phenomenal_rails (1.2.5)
+    phenomenal_rails (1.2.6)
       phenomenal (~> 1.2.0)
       rails (>= 3.1.0)
 
@@ -42,7 +42,7 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
-    arel (3.0.2)
+    arel (3.0.3)
     bootstrap-sass-rails (2.3.2.1)
       railties (>= 3.1.0)
       sass-rails (>= 3.1.0)
@@ -109,14 +109,14 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.23)
+    mime-types (1.25.1)
     multi_json (1.7.7)
     multipart-post (1.2.0)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.8.0)
     nokogiri (1.4.7)
-    polyglot (0.3.3)
+    polyglot (0.3.4)
     posix-spawn (0.3.6)
     pygments.rb (0.5.2)
       posix-spawn (~> 0.3.6)
@@ -186,14 +186,14 @@ GEM
     thor (0.18.1)
     tilt (1.4.1)
     tins (1.0.0)
-    treetop (1.4.14)
+    treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
     twitter (4.8.1)
       faraday (~> 0.8, < 0.10)
       multi_json (~> 1.0)
       simple_oauth (~> 0.2)
-    tzinfo (0.3.37)
+    tzinfo (0.3.38)
     uglifier (2.1.2)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
