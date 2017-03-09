@@ -1,4 +1,5 @@
 source 'http://rubygems.org'
+ruby "1.9.3"
 
 gem 'rails', "3.2.13"
 gem 'unicorn'
@@ -19,7 +20,6 @@ gem 'jquery-rails'
 gem 'bootstrap-sass-rails'
 gem 'bootstrap_forms'
 gem 'twitter'
-gem 'sqlite3'
 
 group :assets do
   gem 'sass-rails'
