@@ -3,8 +3,6 @@ ruby "1.9.3"
 
 gem 'rails', "3.2.13"
 gem 'unicorn'
-gem 'capistrano'
-gem 'rvm-capistrano'
 
 gem 'haml'
 gem 'will_paginate'

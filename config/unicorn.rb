@@ -1,11 +1,3 @@
-root="/var/www/rphenomenal/current"
-
-working_directory root
-worker_processes 2
-
-preload_app true
-
+worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
 timeout 30
-
-pid "#{root}/tmp/pids/unicorn.pid"
-listen "#{root}/tmp/rphenomenal.sock"
+preload_app true
